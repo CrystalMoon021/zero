@@ -20,8 +20,10 @@ Monster asks you to choose if you let it go free it promises you a life outside 
 - [ ] Choose a name
 - [ ] Write the intro
 
-### Aspects
+### Aspects to code
 * Inventory
 * Fighting?
-* Dialogue
+* Dialogue selection
+
+@CrystalMoon021 sir
 
