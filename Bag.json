@@ -1,0 +1,14 @@
+{
+    "apple": {
+        "description": "An apple that has a worm in it...eww",
+        "name": "apple"
+    },
+    "dagger": {
+        "description": "A small rusty dagger",
+        "name": "dagger"
+    },
+    "garlic": {
+        "description": "A knob of garlic, seems fresh enough to consume",
+        "name": "garlic"
+    }
+}

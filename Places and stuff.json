@@ -1,0 +1,22 @@
+{
+    "church": {},
+    "house": {
+        "description": "A creaky old house",
+        "items": {
+            "key": {
+                "description": "An old house key",
+                "name": "key"
+            },
+            "snail": {
+                "description": "A snail with no legs",
+                "name": "snail"
+            }
+        },
+        "name": "house"
+    },
+    "store": {},
+    "town": {
+        "description": "A small town in the mountains",
+        "name": "town"
+    }
+}
