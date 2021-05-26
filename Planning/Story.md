@@ -1,10 +1,15 @@
 # Story Brainstorming :tada:
 ____
 
+### Map
 Buildings in the small town:
 > shop with shop keeper
 > church with priest
-> house with family
+> house with family (also doctor's house)
+> resturant or bakery
+> trading shop?
+> butchers
+> library
 
 Endings
 - Human made - tinker or destroy
@@ -24,6 +29,7 @@ Monster asks you to choose if you let it go free it promises you a life outside 
 * Inventory
 * Fighting?
 * Dialogue selection
+* Navigation - usually with options not directions (shop or church)
 
 
 
