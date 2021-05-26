@@ -2,14 +2,14 @@
 ____
 
 ### Map
-Buildings in the small town:
-> shop with shop keeper
-> church with priest
-> house with family (also doctor's house)
-> resturant or bakery
-> trading shop?
-> butchers
-> library
+> Buildings in the small town:
+- shop with shop keeper
+- church with priest
+- house with family (also doctor's house)
+- resturant or bakery
+- trading shop?
+- butchers
+- library
 
 Endings
 - Human made - tinker or destroy
