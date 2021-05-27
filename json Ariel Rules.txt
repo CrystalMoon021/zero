@@ -1,0 +1,14 @@
+
+General Rules
+If you have no items - don't have the item key
+- aka never have a blank "items": {}
+all names are lowercase (all keys too)
+the description of a place must indicate the name of the location
+
+Bag
+key: name of item
+- description, name, take
+
+Places and stuff
+key: location name
+- description, name, items
