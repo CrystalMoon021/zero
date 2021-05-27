@@ -3,10 +3,10 @@ Our game
 
 ## Current Tasks for Coding
 
-Ariel's Quest
+Ariel's Quest - DONE
 - figure out to properly have branches and pull requests on github
 
-Pathing
+Pathing - Bruce
 - e.g, The only way to get to the church's basement is thru the church
 - find out some way to do the pathing (list in lists? mapping it somehow?)
 - mapping out the connections between locations
@@ -19,7 +19,7 @@ Shop - DONE
 > interacts with the inventory
 
 
-Dialogue
+Dialogue - WIP
 - spit out set dialogue from the txt or json or whatever file for each character
 - have the set dialogue for the main protagonist to respond with (3 options to choose from with 1, 2, 3)
 - as for the rest idk, try to figure it out
