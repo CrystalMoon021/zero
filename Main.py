@@ -5,7 +5,9 @@ import Store
 cur_place = "town"
 money = 20
 
+
 print("Welcome to town Zero")
+
 
 while True:
     print("\nWhat would you like to do now?")
