@@ -16,7 +16,24 @@
         },
         "name": "house"
     },
-    "store": {},
+    "store": {
+        "description": "the local general store, you can find most simple items here",
+        "items": {
+            "hammer": {
+                "description": "A hammer with an oak handle",
+                "name": "hammer",
+                "price": 20,
+                "take": true
+            },
+            "hat": {
+                "description": "A hat to keep out the sun",
+                "name": "hat",
+                "price": 15,
+                "take": true
+            }
+        },
+        "name": "store"
+    },
     "town": {
         "description": "A small town in the mountains",
         "name": "town"
