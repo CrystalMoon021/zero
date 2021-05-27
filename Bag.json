@@ -1,27 +1,17 @@
 {
     "apple": {
         "description": "An apple that has a worm in it...eww",
-        "take" : True,
-        "name": "apple"
+        "name": "apple",
+        "take": true
     },
     "dagger": {
         "description": "A small rusty dagger",
-        "take" : True,
-        "name": "dagger"
+        "name": "dagger",
+        "take": true
     },
     "garlic": {
         "description": "A knob of garlic, seems fresh enough to consume",
-        "take" : True,
-        "name": "garlic"
-    },
-    "key": {
-        "description": "An old house key",
-        "take" : True,
-        "name": "key"
-    },
-    "snail": {
-        "description": "A snail with no legs",
-        "take" : True,
-        "name": "snail"
+        "name": "garlic",
+        "take": true
     }
 }

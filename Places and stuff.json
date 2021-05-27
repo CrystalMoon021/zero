@@ -3,7 +3,16 @@
     "house": {
         "description": "A creaky old house",
         "items": {
-
+            "key": {
+                "description": "An old house key",
+                "name": "key",
+                "take": true
+            },
+            "snail": {
+                "description": "A snail with no legs",
+                "name": "snail",
+                "take": true
+            }
         },
         "name": "house"
     },

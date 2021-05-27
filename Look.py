@@ -54,7 +54,7 @@ def pick_up_item(item, place):
     allPlaces = read_places_and_stuff()
     itemName = item.lower()
     place = place.lower()
-    Inventory.add_item_to_inventory[allPlaces[place]["items"][itemName])
+    Inventory.add_item_to_inventory(allPlaces[place]["items"][itemName])
 
     del allPlaces[place]["items"][itemName]
     write_places_and_stuff(allPlaces)
