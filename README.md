@@ -26,7 +26,7 @@ Dialogue
 - maybe some way to map out the dialogue (e.g, if you come back to the priest twice it's different dialogue)
 > prob need to wait for the story to get more clear
 
-Fighting - Optional
+Fighting - Optional (do it if you like to or have extra time ig)
 - free reins
 - maybe something like kingdom of loathing style?
 - we might not have any fighting at all
