@@ -3,13 +3,15 @@ import Look
 
 cur_place = "town"
 
+print("Welcome to town Zero")
+
 while True:
     print("\nWhat would you like to do now?")
 
     command = input().lower().split()
     cmd = command[0].lower()
 
-    if cmd == "take" or command[0] == "pick" and command[1] == "up" or cmd == "grab":
+    if cmd == "take" or (command[0] == "pick" and command[1] == "up") or cmd == "grab":
         try:
             Look.pick_up_item(command[-1], cur_place)    # since pick up is two words - nvm I fixed it (Janice) or i made it worse
             print("You successfully picked up: " + command[-1])
@@ -30,6 +32,7 @@ while True:
         print("Currently you are at: " + cur_place)
         Look.read_place_description(cur_place)
         Look.look_around(cur_place)
+
     elif cmd == "g" or cmd == "go" or cmd == "gt" or cmd == "travel":
         try:
             print("You have arrived at: ")
