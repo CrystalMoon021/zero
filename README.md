@@ -3,10 +3,10 @@ Our game
 
 ## Current Tasks for Coding
 
-Ariel's Quest
+Ariel's Quest - DONE
 - figure out to properly have branches and pull requests on github
 
-Pathing
+Pathing - Bruce
 - e.g, The only way to get to the church's basement is thru the church
 - find out some way to do the pathing (list in lists? mapping it somehow?)
 - mapping out the connections between locations
