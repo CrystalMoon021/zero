@@ -19,7 +19,7 @@ def print_inventory(): #prints the items
     for key in Bag.keys():
         print("    " + key)
 
-def add_item_to_inventory(item): #input dictionary
+def add_item_to_inventory(item): # input dictionary
     Bag = read_inventory()
     Bag[item["name"]] = item  # add a new key and value
     write_inventory(Bag)
