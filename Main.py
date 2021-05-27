@@ -1,7 +1,9 @@
 import Inventory
 import Look
+import Store
 
 cur_place = "town"
+money = 20
 
 print("Welcome to town")
 
@@ -34,13 +36,25 @@ while True:
         Look.look_around(cur_place)
 
     elif cmd == "g" or cmd == "go" or cmd == "gt" or cmd == "travel":
+
+        if command[-1] == "store":
+            cur_place = "store"
+            print("What would you like to buy?")
+            Store.arrive_at_Store(cur_place)
+        else:
+            try:
+                print("You have arrived at: ")
+                Look.read_place_description(command[-1])
+                cur_place = Look.read_place_name(command[-1])
+            except:
+                print("Huh I can't find that place")
+
+    elif cmd == "buy":
         try:
-            print("You have arrived at: ")
-            Look.read_place_description(command[-1])
-            cur_place = Look.read_place_name(command[-1])
+            money = Store.buying_items(cur_place, money, command[1])
         except:
-            print("Huh I can't find that place")
-        Look.look_around(cur_place)
+            print("You cannot buy this item")
+
     elif cmd == "drop":
         try:
             Look.drop_item(command[1], cur_place)
