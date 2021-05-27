@@ -17,13 +17,13 @@ def look_around(cur_place):
     print("Nearby you can see: ")
     for key in Place.keys(): # check for nearby locations
         if key != cur_place:
-            print("     " + key)
+            print("     " + key, end="")
+    print("")
 
     try: # check for items
         read_place_items(cur_place)
     except:
-        print("You see nothing out of the ordinary")
-
+        pass
     try: # check for people
         Interactions.check_for_people(cur_place)
     except:
