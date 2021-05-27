@@ -12,7 +12,7 @@ Pathing
 - mapping out the connections between locations
 > seperate and doesn't interfere with other aspects (the look command searchs in the place json file based on name, as long as there are no repeating place names it'll work)
 
-Shop
+Shop - DONE
 - Have a independent shop inventory json file (maybe have it seperate from the place json files?)
 - buy items from the shop (if you have enough money)
 - subtract money and add items to inventory, (subtract items from shop?)
