@@ -1,5 +1,6 @@
 import json
 import Inventory
+import Interactions
 
 def read_places_and_stuff(): # returns dictionary of places
     try:
@@ -14,14 +15,19 @@ def read_places_and_stuff(): # returns dictionary of places
 def look_around(cur_place):
     Place = read_places_and_stuff()
     print("Nearby you can see: ")
-    for key in Place.keys():
+    for key in Place.keys(): # check for nearby locations
         if key != cur_place:
             print("     " + key)
 
-    try:
+    try: # check for items
         read_place_items(cur_place)
     except:
         print("You see nothing out of the ordinary")
+
+    try: # check for people
+        Interactions.check_for_people(cur_place)
+    except:
+        print("There is no one here")
 
 
 def read_place_description(examinePlace):

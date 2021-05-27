@@ -1,4 +1,5 @@
 import Inventory
+import Interactions
 import Look
 import Store
 
@@ -48,7 +49,7 @@ while True:
         if command[-1] == "store":
             Look.read_place_description(command[-1])
             cur_place = "store"
-            print("What would you like to buy?")
+            print("'What would you like to buy?' asks the shopkeeper")
             Store.arrive_at_Store(cur_place)
         else:
             try:
@@ -62,6 +63,13 @@ while True:
             money = Store.buying_items(cur_place, money, command[1])
         except:
             print("You cannot buy this item")
+
+    elif cmd == "talk":
+        try:
+            s = ""
+            Interactions.talk_to_person(cur_place, s.join(command[1:]))
+        except:
+            print("Huh, I can't find that person")
 
     # elif cmd == "drop":
     #     try:
