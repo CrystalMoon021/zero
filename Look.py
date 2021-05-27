@@ -17,30 +17,24 @@ def look_around(cur_place):
     for key in Place.keys():
         if key != cur_place:
             print("     " + key)
-    print("To head somewhere or look close at each location use 'go to <placename>' ")
+
     try:
-        print("You see a few rocks and... ")
         read_place_items(cur_place)
     except:
         print("You see nothing out of the ordinary")
 
 
-def read_place_name(examinePlace):
-    Place = read_places_and_stuff()
-    placeName = examinePlace.lower()
-    return Place[placeName]["name"]
-
-
 def read_place_description(examinePlace):
     Place = read_places_and_stuff()
     placeName = examinePlace.lower()
-    print(Place[placeName]["description"])
+    print("You are at: " + Place[placeName]["description"])
 
 
 def read_place_items(examinePlace):
     Place = read_places_and_stuff()
     placeName = examinePlace.lower()
     items = Place[placeName]["items"]
+    print("You see...")
     for key in items.keys():
         print("    " + key)
 
