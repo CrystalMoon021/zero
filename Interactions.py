@@ -23,17 +23,17 @@ def talk_to_person(cur_place, person):
 
     pplMatch = False
 
-    for key in people_in_place.keys():
+    for key in people_in_place.keys(): # find the person to talk to
         if person.find(key) != -1:
             personName = key
             pplMatch = True
             break
 
     if pplMatch == False:
-        raise ValueError
+        raise ValueError # can't find person
     else:
         dialogueCount = len(dialogue[place][personName])-1
-        for n in range(int(dialogueCount/2)):
+        for n in range(int(dialogueCount/2)): # figure out how much dialogue
             counter = "dialogue" + str(n)
             print(dialogue[place][personName][counter])
             counter = "response" + str(n)
