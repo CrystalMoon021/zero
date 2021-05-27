@@ -17,19 +17,38 @@ def check_for_people(cur_place):
 
 def talk_to_person(cur_place, person):
     dialogue = read_dialogue()
-    personName = person.lower()
+    person = person.lower()
     place = cur_place.lower()
     people_in_place = dialogue[place]
 
     pplMatch = False
 
     for key in people_in_place.keys():
-        if personName.find(key) != -1:
-            print(dialogue[place][key]["dialogue1"])
+        if person.find(key) != -1:
+            personName = key
             pplMatch = True
             break
 
     if pplMatch == False:
         raise ValueError
     else:
+        dialogueCount = len(dialogue[place][personName])-1
+        for n in range(int(dialogueCount/2)):
+            counter = "dialogue" + str(n)
+            print(dialogue[place][personName][counter])
+            counter = "response" + str(n)
+            potentialResponse = dialogue[place][personName][counter]
+            print("How would you like to respond? ")
+            for response in potentialResponse:
+                print("   " + response)
+            try:
+                num = int(input())
+                print("You responded with: " + dialogue[place][personName][counter][num-1][2:])
+            except:
+                print("Please provide a number only")
+
         return
+
+
+
+
