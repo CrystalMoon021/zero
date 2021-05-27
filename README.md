@@ -1,4 +1,4 @@
-# zero
+# Zero
 Our game
 
 ## Current Tasks for Coding
