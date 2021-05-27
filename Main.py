@@ -3,7 +3,7 @@ import Look
 
 cur_place = "town"
 
-print("Welcome to town Zero")
+print("Welcome to town")
 
 while True:
     print("\nWhat would you like to do now?")
