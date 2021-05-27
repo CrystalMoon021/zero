@@ -5,7 +5,7 @@ import Store
 cur_place = "town"
 money = 20
 
-print("Welcome to town")
+print("Welcome to town 0")
 
 while True:
     print("\nWhat would you like to do now?")
