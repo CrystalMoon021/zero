@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="86c07ba5-946f-4410-8c21-0143bc085d88" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Dialogue.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Interactions.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Look.py" beforeDir="false" afterPath="$PROJECT_DIR$/Look.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dialogue.json" beforeDir="false" afterPath="$PROJECT_DIR$/Dialogue.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interactions.py" beforeDir="false" afterPath="$PROJECT_DIR$/Interactions.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

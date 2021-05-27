@@ -65,11 +65,11 @@ while True:
             print("You cannot buy this item")
 
     elif cmd == "talk":
-        try:
+        #try:
             s = ""
             Interactions.talk_to_person(cur_place, s.join(command[1:]))
-        except:
-            print("Huh, I can't find that person")
+        #except:
+         #   print("Huh, I can't find that person")
 
     # elif cmd == "drop":
     #     try:
