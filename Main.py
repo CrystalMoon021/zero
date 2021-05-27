@@ -15,7 +15,11 @@ while True:
 
     if cmd == "take" or (command[0] == "pick" and command[1] == "up") or cmd == "grab":
         try:
-            Look.pick_up_item(command[-1], cur_place)    # since pick up is two words - nvm I fixed it (Janice) or i made it worse
+            s = ""
+            if command[0] == "pick" and command[1] == "up":
+                Look.pick_up_item(s.join(command[2:]), cur_place)
+            else:
+                Look.pick_up_item(s.join(command[1:]), cur_place)
             print("You successfully picked up: " + command[-1])
         except:
             print("Huh, I can't find that item here")
@@ -26,10 +30,12 @@ while True:
 
     elif cmd == "x" or cmd == "examine" or cmd == "inspect":
         try:
-            Inventory.examine_item_in_inventory(command[1])
+            s = ""
+            Inventory.examine_item_in_inventory(s.join(command[1:]))
         except:
             try:
-                Look.examine_item_in_place(command[1], cur_place)
+                s = ""
+                Look.examine_item_in_place(s.join(command[1:]), cur_place)
             except:
                 print("Huh, make sure to indicate which object to examine (e.g, x apple)")
 
@@ -67,6 +73,7 @@ while True:
         print("i: check inventory, x: examine something (must be in inventory), l: look around, gt: go to")
         print("You can also pick up and buy items")
         print("To head somewhere or look close at each location use 'go to <placename>' ")
+
     elif cmd == "swear" or cmd == "curse" or cmd == "klag":
         print("You let out a string of curses that would make your Uncle Rogers proud")
     else:

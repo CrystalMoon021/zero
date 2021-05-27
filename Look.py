@@ -27,16 +27,16 @@ def look_around(cur_place):
 def read_place_description(examinePlace):
     Place = read_places_and_stuff()
     placeName = examinePlace.lower()
-    print("You are at: " + Place[placeName]["description"])
+    print("Arrived at: " + Place[placeName]["description"])
 
 
 def read_place_items(examinePlace):
     Place = read_places_and_stuff()
     placeName = examinePlace.lower()
     items = Place[placeName]["items"]
-    print("You see...")
+    print("There are a few items scattered around...")
     for key in items.keys():
-        print("    " + key)
+        print("    " + items[key]["description"])
 
 
 def write_places_and_stuff(Place):
@@ -48,10 +48,24 @@ def pick_up_item(item, place):
     allPlaces = read_places_and_stuff()
     itemName = item.lower()
     place = place.lower()
-    Inventory.add_item_to_inventory(allPlaces[place]["items"][itemName]) # add to inventory
+    items = allPlaces[place]["items"]
 
-    del allPlaces[place]["items"][itemName] # remove form places database
-    write_places_and_stuff(allPlaces)
+    itemMatch = False
+
+    for key in items.keys():
+        if itemName.find(key) != -1:
+            Inventory.add_item_to_inventory(allPlaces[place]["items"][key])  # add to inventory
+            del allPlaces[place]["items"][key]  # remove form places database
+            write_places_and_stuff(allPlaces)
+            itemMatch = True
+            break
+
+    if itemMatch == False:
+        raise ValueError
+    else:
+        return
+
+
 
 
 def drop_item(item, place):
@@ -68,7 +82,21 @@ def drop_item(item, place):
     Inventory.write_inventory(Bag)
 
 
-def examine_item_in_place(examineItem, place): #input name of item in string
-    Place = read_places_and_stuff()
-    itemName = examineItem.lower()
-    print(Place[place]["items"][itemName]["description"])
+def examine_item_in_place(item, place): #input name of item in string
+    allPlaces = read_places_and_stuff()
+    itemName = item.lower()
+    place = place.lower()
+    items = allPlaces[place]["items"]
+
+    itemMatch = False
+
+    for key in items.keys():
+        if itemName.find(key) != -1:
+            print(allPlaces[place]["items"][key]["description"])
+            itemMatch = True
+            break
+
+    if itemMatch == False:
+        raise ValueError
+    else:
+        return

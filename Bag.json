@@ -9,9 +9,9 @@
         "name": "dagger",
         "take": true
     },
-    "garlic": {
-        "description": "A knob of garlic, seems fresh enough to consume",
-        "name": "garlic",
+    "snail": {
+        "description": "A snail with no legs",
+        "name": "snail",
         "take": true
     }
 }
