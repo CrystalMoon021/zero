@@ -3,6 +3,13 @@ Our game
 
 ## Current Tasks for Coding
 
+Home
+- add a home location
+- have a diary txt file for users to write in
+- have a desk?
+
+Make the locations listed with spaces and no new lines
+
 Ariel's Quest - DONE
 - figure out to properly have branches and pull requests on github
 
