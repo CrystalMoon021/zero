@@ -28,8 +28,18 @@ def add_item_to_inventory(item): # input dictionary
 def examine_item_in_inventory(examineItem): #input name of item in string
     Bag = read_inventory()
     itemName = examineItem.lower()
-    print(Bag[itemName]["description"])
+    itemMatch = False
 
+    for key in Bag.keys():
+        if itemName.find(key) != -1:
+            print(Bag[key]["description"])
+            itemMatch = True
+            break
+
+    if itemMatch == False:
+        raise ValueError
+    else:
+        return
 
 
 

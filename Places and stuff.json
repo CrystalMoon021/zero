@@ -2,19 +2,18 @@
     "church": {
         "description": "A small white church",
         "name": "church"
-
     },
     "house": {
         "description": "A creaky old house",
         "items": {
+            "garlic": {
+                "description": "A knob of garlic, seems fresh enough to consume",
+                "name": "garlic",
+                "take": true
+            },
             "key": {
                 "description": "An old house key",
                 "name": "key",
-                "take": true
-            },
-            "snail": {
-                "description": "A snail with no legs",
-                "name": "snail",
                 "take": true
             }
         },
@@ -23,12 +22,6 @@
     "store": {
         "description": "the local general store, you can find most simple items here",
         "items": {
-            "tea": {
-                "description": "A cup of nice tea",
-                "name": "tea",
-                "price": 5,
-                "take": true
-            },
             "hammer": {
                 "description": "A hammer with an oak handle",
                 "name": "hammer",
@@ -39,6 +32,12 @@
                 "description": "A hat to keep out the sun",
                 "name": "hat",
                 "price": 15,
+                "take": true
+            },
+            "tea": {
+                "description": "A cup of nice tea",
+                "name": "tea",
+                "price": 5,
                 "take": true
             }
         },
