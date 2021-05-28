@@ -2,8 +2,10 @@
   "church": {
     "priest": {
       "description": "Inside the church a priest prays, he stands when he sees you in the doorway",
-      "dialogue0": "Welcome, welcome, how are you doing this fine day?",
-      "response0": ["1 Okay, I guess", "2 Good! How about you?", "3 I want to die"]
+      "count": 2,
+      "dialogue0": ["Welcome, welcome, how are you doing this fine day?"],
+      "response0": ["1 Okay, I guess", "2 Good! How about you?", "3 I want to die"],
+      "dialogue1": ["That's valid", "Glad to hear it!", "I hope things get better"]
     }
   },
   "house": {
