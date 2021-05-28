@@ -32,21 +32,24 @@ def talk_to_person(cur_place, person):
     if pplMatch == False:
         raise ValueError # can't find person
     else:
-        dialogueCount = len(dialogue[place][personName])-1
-        for n in range(int(dialogueCount/2)): # figure out how much dialogue
+        dialogueCount = dialogue[place][personName]["count"]
+        num = 0
+        for n in range(dialogueCount): # figure out how much dialogue
             counter = "dialogue" + str(n)
-            print(dialogue[place][personName][counter])
+            print(" '" + dialogue[place][personName][counter][num-1] + "' said the " + personName)
             counter = "response" + str(n)
-            potentialResponse = dialogue[place][personName][counter]
-            print("How would you like to respond? ")
-            for response in potentialResponse:
-                print("   " + response)
-            try:
-                num = int(input())
-                print("You responded with: " + dialogue[place][personName][counter][num-1][2:])
+            try: # Incase there is no response just dialogue in json plan
+                potentialResponse = dialogue[place][personName][counter]
+                print("How would you like to respond? ")
+                for response in potentialResponse:
+                    print("   " + response)
+                try:
+                    num = int(input())
+                    print("You responded with: " + dialogue[place][personName][counter][num - 1][2:])
+                except:
+                    print("Please provide a number only")
             except:
-                print("Please provide a number only")
-
+                pass
         return
 
 
