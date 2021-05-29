@@ -84,13 +84,6 @@
                 "name": "hat",
                 "price": 15,
                 "take": true
-            },
-            "tea": {
-                "description": "A cup of nice tea",
-                "examine": "I see nothing special about the tea",
-                "name": "tea",
-                "price": 5,
-                "take": true
             }
         },
         "name": "store",

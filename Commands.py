@@ -21,16 +21,11 @@ def basic_commands(cur_place, money):
             Inventory.examine_item_in_inventory(command[1:])
 
     elif cmd == "l" or cmd == "look" or cmd == "describe":
-        if cur_place == "store":
-            Store.arrive_at_Store(cur_place)
-            Interactions.check_for_people(cur_place)  # check for people (not people and items like look_around)
-            print("\n")
-        else:
-            Look.read_place_description(cur_place)
-            Look.look_around(cur_place)
+        Look.read_place_description(cur_place)
+        Look.look_around(cur_place, money)
 
     elif cmd == "g" or cmd == "go" or cmd == "gt" or cmd == "travel":
-        cur_place = Look.goto_place_entry(command[1:], cur_place)
+        cur_place = Look.goto_place_entry(command[1:], cur_place, money)
 
     elif cmd == "buy":
         if cur_place == "store":
@@ -39,8 +34,7 @@ def basic_commands(cur_place, money):
             print("You don't see any items you can buy, maybe try a store?")
 
     elif cmd == "talk":
-        s = ""
-        Interactions.talk_to_person(cur_place, s.join(command[1:]))
+        Interactions.talk_to_person(cur_place, command[1:])
 
     elif cmd == "break" or cmd == "use":
         s = ""

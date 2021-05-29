@@ -9,7 +9,7 @@ def read_dialogue(): # returns dictionary
 
     return dialogue
 
-def check_for_people(cur_place):
+def check_for_people(cur_place): # read out ppl in place - part of look cmd
     dialogue = read_dialogue()
     try:
         people = dialogue[cur_place]
@@ -19,24 +19,26 @@ def check_for_people(cur_place):
         print("There is no one else here.")
         return
 
-def talk_to_person(cur_place, person):
+def find_person(cur_place, person): # runs when talk to person runs, check if valid person
+    s = ""
+    person = s.join(person).lower() # process person name
+    place = cur_place.lower() # process place name
     dialogue = read_dialogue()
-    person = person.lower()
-    place = cur_place.lower()
     people_in_place = dialogue[place]
-
-    pplMatch = False
-
-    for key in people_in_place.keys(): # find the person to talk to
+    for key in people_in_place.keys():
         if person.find(key) != -1:
-            personName = key
-            pplMatch = True
-            break
+            return place, key
+    print("You pause and look around but you cannot find that person here")
+    return False, False
 
-    if pplMatch == False:
-        print("You pause and look around but you cannot find that person")
+def talk_to_person(cur_place, person): # talk to cmd
+    dialogue = read_dialogue()
+    place, personName = find_person(cur_place, person)
+
+    if personName == False: # person doesn't exist
+        return
     else:
-        dialogueCount = dialogue[place][personName]["count"]
+        dialogueCount = dialogue[place][personName]["count"] # find how much dialogue to read
         num = 0
         for n in range(dialogueCount): # figure out how much dialogue
             counter = "dialogue" + str(n)
@@ -47,14 +49,16 @@ def talk_to_person(cur_place, person):
                 print("How would you like to respond? ")
                 for response in potentialResponse:
                     print("   " + response)
-                try:
-                    num = int(input())
-                    print("You responded with: " + dialogue[place][personName][counter][num - 1][2:])
-                except:
-                    print("Please provide a number only")
+                while True:
+                    try: # check if number
+                        num = int(input())
+                        print("You responded with: " + dialogue[place][personName][counter][num - 1][2:])
+                        break
+                    except:
+                        print("Please provide a number only")
             except:
-                pass
-        return
+                pass # there is no response in database
+
 
 
 
