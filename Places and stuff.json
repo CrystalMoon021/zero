@@ -1,24 +1,33 @@
 {
     "base": {
         "description": "You stand in a plain white cell with simple furnishing. ",
+        "entry": "You come back home, and take a rest in the chair. ",
         "items": {
-            "desk": {
-                "description": "An old desk stands across the room, one leg is shorter than the other three",
-                "name": "desk",
-                "take": false,
-                "examine": "I see nothing special about the desk"
-            },
             "chair": {
                 "description": "A simple oak chair lies in the corner collecting dust",
+                "examine": "I see nothing special about the chair",
                 "name": "chair",
-                "take": false,
-                "examine": "I see nothing special about the chair"
+                "take": false
+            },
+            "cross": {
+                "broken": false,
+                "brokenText": "The cross shatters to pieces on the ceramic floor, bits of wires fall out that you quickly pick up. ",
+                "description": "An ornate cross lies on a small mount",
+                "examine": "This cross looks easily breakable",
+                "name": "cross",
+                "take": true
+            },
+            "desk": {
+                "description": "An old desk stands across the room, one leg is shorter than the other three",
+                "examine": "I see nothing special about the desk",
+                "name": "desk",
+                "take": false
             },
             "window": {
                 "description": "Thin rays of light shine through the thick glass of the small barred window",
+                "examine": "I see nothing special about the window",
                 "name": "window",
-                "take": false,
-                "examine": "I see nothing special about the window"
+                "take": false
             }
         },
         "name": "base",
@@ -26,66 +35,55 @@
     },
     "church": {
         "description": "You stand in a small white church, light shines through a central window behind the lectern. ",
-        "name": "church",
-        "outside": "A church looms in the distance. ",
+        "entry": "You enter the church, it is warmer in here. ",
         "items": {
             "lectern": {
                 "description": "",
+                "examine": "I see nothing special about the lectern",
                 "name": "desk",
-                "take": false,
-                "examine": "I see nothing special about the lectern"
+                "take": false
             },
             "window": {
                 "description": "",
+                "examine": "I see nothing special about the window",
                 "name": "window",
-                "take": false,
-                "examine": "I see nothing special about the window"
+                "take": false
             }
-        }
+        },
+        "name": "church",
+        "outside": "A church looms in the distance. "
     },
     "house": {
-        "description": "You step in the old house, a floorboard creaks under your weight. ",
+        "description": "You stand in the old house, you can hear the sound of the wind blowing through gaps in the roof. ",
+        "entry": "You step in the old house, a floorboard creaks under your weight. ",
         "items": {
             "garlic": {
                 "description": "A knob of garlic, seems fresh enough to consume",
+                "examine": "I see nothing special about the garlic",
                 "name": "garlic",
-                "take": true,
-                "examine": "I see nothing special about the garlic"
-            },
-            "key": {
-                "description": "An old house key",
-                "name": "key",
-                "take": true,
-                "examine": "I see nothing special about the key"
+                "take": true
             }
         },
         "name": "house",
         "outside": "A creaky old house with no door stands to the side. There are spiderwebs on the windowsill. "
     },
     "store": {
-        "entry": "You entered the local general store, a bell rings to announce your entrance and the shopkeeper looks up. \n'What would you like to buy?' asks the shopkeeper. ",
         "description": "You stand in the general store. ",
+        "entry": "You entered the local general store, a bell rings to announce your entrance and the shopkeeper looks up. \n'What would you like to buy?' asks the shopkeeper. ",
         "items": {
             "hammer": {
                 "description": "A hammer with an oak handle",
+                "examine": "I see nothing special about the hammer",
                 "name": "hammer",
                 "price": 20,
-                "take": true,
-                "examine": "I see nothing special about the hammer"
+                "take": true
             },
             "hat": {
                 "description": "A hat to keep out the sun",
+                "examine": "I see nothing special about the hat",
                 "name": "hat",
                 "price": 15,
-                "take": true,
-                "examine": "I see nothing special about the hat"
-            },
-            "tea": {
-                "description": "A cup of nice tea",
-                "name": "tea",
-                "price": 5,
-                "take": true,
-                "examine": "I see nothing special about the tea"
+                "take": true
             }
         },
         "name": "store",
@@ -93,12 +91,13 @@
     },
     "town": {
         "description": "You stand in the town center, an old bronze statue stares back at you",
+        "entry": "You walk into the town center, and nearly hit the bronze statue of EastRiver's founder. ",
         "items": {
             "statue": {
                 "description": "",
+                "examine": "You squint real hard at the statue of the town's founder. It squints right back",
                 "name": "statue",
-                "take": false,
-                "examine": "You squint real hard at the statue of the town's founder. It squints right back"
+                "take": false
             }
         },
         "name": "town",

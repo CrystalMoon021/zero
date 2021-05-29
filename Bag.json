@@ -1,20 +1,33 @@
 {
     "apple": {
         "description": "An apple that has a worm in it...eww",
+        "examine": "Upon closer examination, the apple is rotting",
         "name": "apple",
-        "take": true,
-        "examine": "Upon closer examination, the apple is rotting"
+        "take": true
     },
     "dagger": {
         "description": "A small rusty dagger",
+        "examine": "This dagger should be sharpened",
         "name": "dagger",
-        "take": true,
-        "examine": "This dagger should be sharpened"
+        "take": true
+    },
+    "key": {
+        "description": "An old house key",
+        "examine": "I see nothing special about the key",
+        "name": "key",
+        "take": true
     },
     "snail": {
         "description": "A snail with no legs",
+        "examine": "I see nothing special about the snail, I can't fathom why I have it",
         "name": "snail",
-        "take": true,
-        "examine": "I see nothing special about the snail, I can't fathom why I have it"
+        "take": true
+    },
+    "tea": {
+        "description": "A cup of nice tea",
+        "examine": "I see nothing special about the tea",
+        "name": "tea",
+        "price": 5,
+        "take": true
     }
 }

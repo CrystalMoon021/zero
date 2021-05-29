@@ -1,6 +1,7 @@
 import json
 import Inventory
 import Interactions
+import Hidden
 
 def read_places_and_stuff(): # returns dictionary of places
     try:
@@ -38,6 +39,7 @@ def read_place_entry(examinePlace):
         print(Place[placeName]["entry"])
     except:
         print("You squint your eyes but you can't find " + examinePlace + " anywhere")
+        return
 
 def read_place_items(examinePlace):
     Place = read_places_and_stuff()
@@ -53,6 +55,34 @@ def write_places_and_stuff(Place):
     with open("Places and stuff.json", "w") as file:  # Prep json for writing
         json.dump(Place, file, indent=4, sort_keys=True)  # Rewrite
 
+def use_break_item(item, place):
+    Place = read_places_and_stuff()
+    itemName = item.lower()
+    placeName = place.lower()
+    try:
+        items = Place[place]["items"]
+        itemMatch = False
+
+        for key in items.keys():
+            if itemName.find(key) != -1: # found a match
+                itemMatch = True
+                broken = Place[placeName]["items"][itemName]["broken"]
+                if broken == True:
+                    print("The item is already broken")
+                    return
+                else: # successfully broken
+                    Place[placeName]["items"][itemName]["broken"] = True
+                    write_places_and_stuff(Place)
+                    print(Place[placeName]["items"][itemName]["brokenText"])
+                    Hidden.hidden_obj_unlocked(itemName)
+                break
+        if itemMatch == False:
+            print("Huh, I can't find that item here")
+        else:
+            return
+    except:
+        print("This item cannot be broken")
+        return
 
 def pick_up_item(item, place):
     allPlaces = read_places_and_stuff()
@@ -109,8 +139,7 @@ def examine_item_in_place(item, place): #input name of item in string
         if itemName.find(key) != -1:
             print(allPlaces[place]["items"][key]["examine"])
             itemMatch = True
-            break
+            return True
 
     if itemMatch == False:
-        print("You can't see any such thing")
-    return
+        return False
