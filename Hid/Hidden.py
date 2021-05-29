@@ -1,9 +1,10 @@
 import json
-import Inventory
+from Inv import Inventory
+
 
 def read_hidden(): # returns dictionary of hidden
     try:
-        with open("Hidden Objects.json", "r") as file:  # Prep json for reading
+        with open("Hid/Hidden Objects.json", "r") as file:  # Prep json for reading
             hidden = json.load(file)  # Read json file convert to dictionary
     except:  # Nothing in inventory: empty file
         hidden = {}
@@ -11,7 +12,7 @@ def read_hidden(): # returns dictionary of hidden
     return hidden
 
 def write_hidden(hidden):
-    with open("Bag.json", "w") as file:  # Prep json for writing
+    with open("Hid/Hidden Objects.json", "w") as file:  # Prep json for writing
         json.dump(hidden, file, indent=4, sort_keys=True)  # Rewrite the hidden data back with new items
 
 

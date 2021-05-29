@@ -1,0 +1,29 @@
+{
+    "apple": {
+        "description": "An apple that has a worm in it...eww",
+        "eat": "You take a bite of the apple, you feel the rotting pieces of fruit slip down your throat. You feel a bit sick. ",
+        "examine": "Upon closer examination, the apple is rotting. This is disgusting, I don't suggest you to eat it.",
+        "name": "apple",
+        "take": true
+    },
+    "dagger": {
+        "description": "A small rusty dagger",
+        "eat": "Are you trying to die?",
+        "examine": "This dagger needs to be sharpened. ",
+        "name": "dagger",
+        "take": true
+    },
+    "key": {
+        "description": "An old house key",
+        "examine": "I see nothing special about the key. ",
+        "name": "key",
+        "take": true
+    },
+    "snail": {
+        "description": "A snail with no legs",
+        "eat": "That is really revolting. I will not allow it. ",
+        "examine": "I see nothing special about the snail, I can't fathom why I have it. It is slimy",
+        "name": "snail",
+        "take": true
+    }
+}

@@ -2,7 +2,7 @@ import json
 
 def read_dialogue(): # returns dictionary
     try:
-        with open("Dialogue.json", "r") as file:  # Prep json for reading
+        with open("Speech/Dialogue.json", "r") as file:  # Prep json for reading
             dialogue = json.load(file)  # Read json file convert to dictionary
     except:  # Nothing in inventory: empty file
         dialogue = {}
