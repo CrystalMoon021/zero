@@ -1,8 +1,8 @@
 {
     "apple": {
         "description": "An apple that has a worm in it...eww",
-        "eat": "You take a bite of the apple, you feel the rotting pieces of fruit slip down your throat. You feel a bit sick. ",
-        "examine": "Upon closer examination, the apple is rotting. This is disgusting, I don't suggest you to eat it.",
+        "eat": "You take a bite of the apple, you feel the rotting pieces of fruit slide down your throat. You feel a bit sick. ",
+        "examine": "Upon closer examination, the apple is rotting. This is disgusting, I suggest you don't eat it.",
         "name": "apple",
         "take": true
     },
@@ -24,6 +24,13 @@
         "eat": "That is really revolting. I will not allow it. ",
         "examine": "I see nothing special about the snail, I can't fathom why I have it. It is slimy",
         "name": "snail",
+        "take": true
+    },
+    "tea": {
+        "description": "A cup of nice tea",
+        "examine": "I see nothing special about the tea",
+        "name": "tea",
+        "price": 5,
         "take": true
     }
 }

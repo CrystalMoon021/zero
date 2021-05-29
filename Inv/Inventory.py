@@ -9,7 +9,7 @@ def read_inventory(): # returns dictionary of Bag
 
     return Bag
 
-def write_inventory(Bag):
+def write_inventory(Bag): # write to inv
     with open("Inv/Bag.json", "w") as file:  # Prep json for writing
         json.dump(Bag, file, indent=4, sort_keys=True)  # Rewrite the inventory back with new items
 

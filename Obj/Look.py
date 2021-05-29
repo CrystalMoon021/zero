@@ -20,9 +20,9 @@ def write_places_and_stuff(Place):
 
 
 
-def look_around(cur_place): # look cmd
+def look_around(cur_place, money): # look cmd
     if cur_place == "store":
-        Store.arrive_at_Store(cur_place) # for store read items diff than other places
+        Store.arrive_at_Store(cur_place, money) # for store read items diff than other places
     else:
         read_place_items(cur_place) # check for items and people
     Interactions.check_for_people(cur_place) # check for people
@@ -59,13 +59,16 @@ def find_place_name(input): # check if the place exists
     print("Huh, I can't find that place")
     return False
 
-def goto_place_entry(newPlace, cur_place): # from the go to cmd
+def goto_place_entry(newPlace, cur_place, money): # from the go to cmd, returns new value for cur_place
     placeName = find_place_name(newPlace) # check if place exists in database to go to
     if placeName == False:
         return cur_place
     elif placeName == cur_place: # already in the place
         print("You are already here")
         return cur_place
+    elif placeName == "store":
+        Store.arrive_at_Store(placeName, money)
+        return "store"
     else:
         Place = read_places_and_stuff()
         print(Place[placeName]["entry"])
@@ -85,7 +88,7 @@ def find_item_name(item, place): # check if that item exists in that place
     return False, False
 
 def use_break_item(item, place): # use or break item cmd (for now only break)
-    itemName, placeName = find_item_name(item, place)
+    itemName, placeName = find_item_name(item, place) # check if item exists
     Place = read_places_and_stuff()
 
     if itemName == False:  # can't find item
@@ -99,7 +102,7 @@ def use_break_item(item, place): # use or break item cmd (for now only break)
             Place[placeName]["items"][itemName]["broken"] = True
             write_places_and_stuff(Place)
             print(Place[placeName]["items"][itemName]["brokenText"])
-            Hidden.hidden_obj_unlocked(itemName)
+            Hidden.hidden_obj_unlocked(itemName) # find the hidden item
 
 def pick_up_item(item, place): # pick up item cmd
     itemName, placeName = find_item_name(item, place) # check if item exists in that place
