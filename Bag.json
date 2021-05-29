@@ -29,5 +29,11 @@
         "name": "tea",
         "price": 5,
         "take": true
+    },
+    "wire": {
+        "description": "A strip of metal",
+        "examine": "It's a thin strip of metal maybe useful in the future",
+        "name": "wire",
+        "take": true
     }
 }

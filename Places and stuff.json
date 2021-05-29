@@ -15,7 +15,7 @@
                 "description": "An ornate cross lies on a small mount",
                 "examine": "This cross looks easily breakable",
                 "name": "cross",
-                "take": true
+                "take": false
             },
             "desk": {
                 "description": "An old desk stands across the room, one leg is shorter than the other three",
