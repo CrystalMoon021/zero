@@ -2,16 +2,19 @@
     "apple": {
         "description": "An apple that has a worm in it...eww",
         "name": "apple",
-        "take": true
+        "take": true,
+        "examine": "Upon closer examination, the apple is rotting"
     },
     "dagger": {
         "description": "A small rusty dagger",
         "name": "dagger",
-        "take": true
+        "take": true,
+        "examine": "This dagger should be sharpened"
     },
     "snail": {
         "description": "A snail with no legs",
         "name": "snail",
-        "take": true
+        "take": true,
+        "examine": "I see nothing special about the snail, I can't fathom why I have it"
     }
 }

@@ -32,14 +32,12 @@ def examine_item_in_inventory(examineItem): #input name of item in string
 
     for key in Bag.keys():
         if itemName.find(key) != -1:
-            print(Bag[key]["description"])
+            print(Bag[key]["examine"])
             itemMatch = True
             break
 
     if itemMatch == False:
-        raise ValueError
-    else:
-        return
+        print("You see no such item")
 
 
 

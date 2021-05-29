@@ -13,37 +13,41 @@ def read_places_and_stuff(): # returns dictionary of places
 
 
 def look_around(cur_place):
+    read_place_items(cur_place) # check for items and people
+    Interactions.check_for_people(cur_place) # check for people
+    print("\n")
+
     Place = read_places_and_stuff()
-    print("Nearby you can see: ")
     for key in Place.keys(): # check for nearby locations
         if key != cur_place:
-            print("     " + key, end="")
+            print(Place[key]["outside"], end="")
     print("")
 
-    try: # check for items
-        read_place_items(cur_place)
-    except:
-        pass
-    try: # check for people
-        Interactions.check_for_people(cur_place)
-    except:
-        print("There is no one here")
 
 
 def read_place_description(examinePlace):
     Place = read_places_and_stuff()
     placeName = examinePlace.lower()
-    print("Arrived at: " + Place[placeName]["description"])
+    print(Place[placeName]["description"])
 
+
+def read_place_entry(examinePlace):
+    try:
+        Place = read_places_and_stuff()
+        placeName = examinePlace.lower()
+        print(Place[placeName]["entry"])
+    except:
+        print("You squint your eyes but you can't find " + examinePlace + " anywhere")
 
 def read_place_items(examinePlace):
     Place = read_places_and_stuff()
     placeName = examinePlace.lower()
-    items = Place[placeName]["items"]
-    print("There are a few items scattered around...")
-    for key in items.keys():
-        print("    " + items[key]["description"])
-
+    try:
+        items = Place[placeName]["items"]
+        for key in items.keys():
+            print("    " + items[key]["description"])
+    except:
+        return
 
 def write_places_and_stuff(Place):
     with open("Places and stuff.json", "w") as file:  # Prep json for writing
@@ -60,32 +64,37 @@ def pick_up_item(item, place):
 
     for key in items.keys():
         if itemName.find(key) != -1:
-            Inventory.add_item_to_inventory(allPlaces[place]["items"][key])  # add to inventory
-            del allPlaces[place]["items"][key]  # remove form places database
-            write_places_and_stuff(allPlaces)
-            itemMatch = True
-            break
+            if allPlaces[place]["items"][key]["take"] == False:
+                print("You cannot pick up this item")
+                return
+            else:
+                Inventory.add_item_to_inventory(allPlaces[place]["items"][key])  # add to inventory
+                del allPlaces[place]["items"][key]  # remove form places database
+                write_places_and_stuff(allPlaces)
+                print("You successfully picked up: " + key)
+                itemMatch = True
+                break
 
     if itemMatch == False:
-        raise ValueError
+        print("Huh, I can't find that item here")
     else:
         return
 
 
 
 
-def drop_item(item, place):
-    Place = read_places_and_stuff()
-    itemName = item.lower()
-    place = place.lower()
-
-    # add item back into place
-    Bag = Inventory.read_inventory()
-
-    Place[place]["items"][itemName] = Bag[itemName]
-    del Bag[itemName]
-    write_places_and_stuff(Place)
-    Inventory.write_inventory(Bag)
+# def drop_item(item, place):
+#     Place = read_places_and_stuff()
+#     itemName = item.lower()
+#     place = place.lower()
+#
+#     # add item back into place
+#     Bag = Inventory.read_inventory()
+#
+#     Place[place]["items"][itemName] = Bag[itemName]
+#     del Bag[itemName]
+#     write_places_and_stuff(Place)
+#     Inventory.write_inventory(Bag) # discontinued
 
 
 def examine_item_in_place(item, place): #input name of item in string
@@ -98,11 +107,10 @@ def examine_item_in_place(item, place): #input name of item in string
 
     for key in items.keys():
         if itemName.find(key) != -1:
-            print(allPlaces[place]["items"][key]["description"])
+            print(allPlaces[place]["items"][key]["examine"])
             itemMatch = True
             break
 
     if itemMatch == False:
-        raise ValueError
-    else:
-        return
+        print("You can't see any such thing")
+    return

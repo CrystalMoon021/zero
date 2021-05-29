@@ -13,5 +13,6 @@ Places and stuff
 key: location name
 - description, name, items
 
-Dialgoue
+Dialgue
 count: number of lines (dialogue and response) minus one
+- dialogue in list format

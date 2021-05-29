@@ -11,13 +11,15 @@
   "house": {
     "old man": {
       "description": "An old man squints out of the old house's window",
-      "dialogue0": "Get out of my house! I don't talk to rats"
+      "count": 1,
+      "dialogue0": ["Get out of my house! I don't talk to rats"]
     }
   },
   "store": {
     "shopkeeper": {
       "description": "A big jolly shopkeeper sits behind the counter, organizing his wares",
-      "dialogue0": "Anything catch your interest?"
+      "count": 1,
+      "dialogue0": ["Anything catch your interest?"]
     }
   },
   "town": {
