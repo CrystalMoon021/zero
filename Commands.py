@@ -23,10 +23,10 @@ def basic_commands(cur_place, money):
         Inventory.print_inventory()
 
     elif cmd == "x" or cmd == "examine" or cmd == "inspect":
-        try:
-            s = ""
-            Look.examine_item_in_place(s.join(command[1:]), cur_place)
-        except:
+        s = ""
+        stateInPlace = Look.examine_item_in_place(s.join(command[1:]), cur_place)
+            
+        if stateInPlace != True:
             s = ""
             Inventory.examine_item_in_inventory(s.join(command[1:]))
 
@@ -58,6 +58,8 @@ def basic_commands(cur_place, money):
         s = ""
         Interactions.talk_to_person(cur_place, s.join(command[1:]))
 
+    elif cmd == "break" or cmd == "use":
+        Look.use_break_item(command[-1], cur_place) # make more flexible search later
 
     # elif cmd == "drop":
     #     try:
