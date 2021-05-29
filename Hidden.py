@@ -3,7 +3,7 @@ import Inventory
 
 def read_hidden(): # returns dictionary of hidden
     try:
-        with open("Hidden Objects.json.json", "r") as file:  # Prep json for reading
+        with open("Hidden Objects.json", "r") as file:  # Prep json for reading
             hidden = json.load(file)  # Read json file convert to dictionary
     except:  # Nothing in inventory: empty file
         hidden = {}
@@ -18,6 +18,7 @@ def write_hidden(hidden):
 
 def hidden_obj_unlocked(item):
     hidden = read_hidden()
-    bag = Inventory.read_inventory()
+    Bag = Inventory.read_inventory()
     itemName = hidden[item]["name"]
-    bag[itemName] = hidden[item][itemName]
+    Bag[itemName] = hidden[item]
+    Inventory.write_inventory(Bag)

@@ -59,29 +59,25 @@ def use_break_item(item, place):
     Place = read_places_and_stuff()
     itemName = item.lower()
     placeName = place.lower()
-    try:
-        items = Place[place]["items"]
-        itemMatch = False
+    items = Place[place]["items"]
+    itemMatch = False
 
-        for key in items.keys():
-            if itemName.find(key) != -1: # found a match
-                itemMatch = True
-                broken = Place[placeName]["items"][itemName]["broken"]
-                if broken == True:
-                    print("The item is already broken")
-                    return
-                else: # successfully broken
-                    Place[placeName]["items"][itemName]["broken"] = True
-                    write_places_and_stuff(Place)
-                    print(Place[placeName]["items"][itemName]["brokenText"])
-                    Hidden.hidden_obj_unlocked(itemName)
-                break
-        if itemMatch == False:
-            print("Huh, I can't find that item here")
-        else:
-            return
-    except:
-        print("This item cannot be broken")
+    for key in items.keys():
+        if itemName.find(key) != -1:  # found a match
+            itemMatch = True
+            broken = Place[placeName]["items"][itemName]["broken"]
+            if broken == True:
+                print("The item is already broken")
+                return
+            else:  # successfully broken
+                Place[placeName]["items"][itemName]["broken"] = True
+                write_places_and_stuff(Place)
+                print(Place[placeName]["items"][itemName]["brokenText"])
+                Hidden.hidden_obj_unlocked(itemName)
+            break
+    if itemMatch == False:
+        print("Huh, I can't break that item")
+    else:
         return
 
 def pick_up_item(item, place):
