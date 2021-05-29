@@ -12,8 +12,11 @@ def arrive_at_Store(cur_place):
 def buying_items(cur_place, money, item):
     print("Currently you have: $" + str(money))
     Place = Look.read_places_and_stuff()
-    item = item.lower()
-    cost = Place[cur_place]["items"][item]["price"]
+    try:
+        item = item.lower()
+        cost = Place[cur_place]["items"][item]["price"]
+    except:
+        print("You are unable to buy this item")
     if money > cost:
         money -= cost
         Look.pick_up_item(item, cur_place)

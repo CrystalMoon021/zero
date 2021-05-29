@@ -11,9 +11,13 @@ def read_dialogue(): # returns dictionary
 
 def check_for_people(cur_place):
     dialogue = read_dialogue()
-    people = dialogue[cur_place]
-    for p in people:
-        print(dialogue[cur_place][p]["description"])
+    try:
+        people = dialogue[cur_place]
+        for p in people:
+            print(dialogue[cur_place][p]["description"], end=" ")
+    except:
+        print("There is no one else here.")
+        return
 
 def talk_to_person(cur_place, person):
     dialogue = read_dialogue()
@@ -30,7 +34,7 @@ def talk_to_person(cur_place, person):
             break
 
     if pplMatch == False:
-        raise ValueError # can't find person
+        print("You pause and look around but you cannot find that person")
     else:
         dialogueCount = dialogue[place][personName]["count"]
         num = 0

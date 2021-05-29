@@ -1,50 +1,107 @@
 {
+    "base": {
+        "description": "You stand in a plain white cell with simple furnishing. ",
+        "items": {
+            "desk": {
+                "description": "An old desk stands across the room, one leg is shorter than the other three",
+                "name": "desk",
+                "take": false,
+                "examine": "I see nothing special about the desk"
+            },
+            "chair": {
+                "description": "A simple oak chair lies in the corner collecting dust",
+                "name": "chair",
+                "take": false,
+                "examine": "I see nothing special about the chair"
+            },
+            "window": {
+                "description": "Thin rays of light shine through the thick glass of the small barred window",
+                "name": "window",
+                "take": false,
+                "examine": "I see nothing special about the window"
+            }
+        },
+        "name": "base",
+        "outside": "You can see a stone trailing leading back into the base where you live. "
+    },
     "church": {
-        "description": "A small white church",
-        "name": "church"
+        "description": "You stand in a small white church, light shines through a central window behind the lectern. ",
+        "name": "church",
+        "outside": "A church looms in the distance. ",
+        "items": {
+            "lectern": {
+                "description": "",
+                "name": "desk",
+                "take": false,
+                "examine": "I see nothing special about the lectern"
+            },
+            "window": {
+                "description": "",
+                "name": "window",
+                "take": false,
+                "examine": "I see nothing special about the window"
+            }
+        }
     },
     "house": {
-        "description": "A creaky old house",
+        "description": "You step in the old house, a floorboard creaks under your weight. ",
         "items": {
             "garlic": {
                 "description": "A knob of garlic, seems fresh enough to consume",
                 "name": "garlic",
-                "take": true
+                "take": true,
+                "examine": "I see nothing special about the garlic"
             },
             "key": {
                 "description": "An old house key",
                 "name": "key",
-                "take": true
+                "take": true,
+                "examine": "I see nothing special about the key"
             }
         },
-        "name": "house"
+        "name": "house",
+        "outside": "A creaky old house with no door stands to the side. There are spiderwebs on the windowsill. "
     },
     "store": {
-        "description": "the local general store, you can find most simple items here",
+        "entry": "You entered the local general store, a bell rings to announce your entrance and the shopkeeper looks up. \n'What would you like to buy?' asks the shopkeeper. ",
+        "description": "You stand in the general store. ",
         "items": {
             "hammer": {
                 "description": "A hammer with an oak handle",
                 "name": "hammer",
                 "price": 20,
-                "take": true
+                "take": true,
+                "examine": "I see nothing special about the hammer"
             },
             "hat": {
                 "description": "A hat to keep out the sun",
                 "name": "hat",
                 "price": 15,
-                "take": true
+                "take": true,
+                "examine": "I see nothing special about the hat"
             },
             "tea": {
                 "description": "A cup of nice tea",
                 "name": "tea",
                 "price": 5,
-                "take": true
+                "take": true,
+                "examine": "I see nothing special about the tea"
             }
         },
-        "name": "store"
+        "name": "store",
+        "outside": "From here, the dirt trail outside leads back to the store. "
     },
     "town": {
-        "description": "A small town in the mountains",
-        "name": "town"
+        "description": "You stand in the town center, an old bronze statue stares back at you",
+        "items": {
+            "statue": {
+                "description": "",
+                "name": "statue",
+                "take": false,
+                "examine": "You squint real hard at the statue of the town's founder. It squints right back"
+            }
+        },
+        "name": "town",
+        "outside": "The town center is close by outside."
     }
 }
