@@ -84,7 +84,7 @@ def goto_place_entry(newPlace, cur_place, money): # from the go to cmd, returns 
             print(Place[placeName]["entry"])
             return placeName
     else:
-        if unlocked == ["cell"]:
+        if unlocked == ["cell", "bathroom"]:
             print("You try the door of your cell, it's locked. It seems like you're stuck in here till you can pick the lock.")
             return cur_place
 

@@ -1,0 +1,4 @@
+i: check inventory, x: examine something (must be in inventory), l: look around, gt: go to
+You can also pick up, buy, use, break, and wear items
+To head somewhere or look close at each location use 'go to <placename>'
+To talk to someone use 'talk to <person>'
