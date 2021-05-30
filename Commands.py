@@ -37,12 +37,10 @@ def basic_commands(cur_place, money):
         Interactions.talk_to_person(cur_place, command[1:])
 
     elif cmd == "break" or cmd == "use":
-        s = ""
-        Look.use_break_item(s.join(command[1:]), cur_place) # make more flexible search later
+        Look.use_break_item(command[1:], cur_place) # make more flexible search later
 
     elif cmd == "drop":
-        s = ""
-        Look.drop_item(s.join(command[1:]), cur_place)
+        Look.drop_item(command[1:], cur_place)
 
     elif cmd == "help":
         print("i: check inventory, x: examine something (must be in inventory), l: look around, gt: go to")

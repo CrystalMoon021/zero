@@ -94,7 +94,11 @@ def use_break_item(item, place): # use or break item cmd (for now only break)
     if itemName == False:  # can't find item
         return
     else:
-        broken = Place[placeName]["items"][itemName]["broken"]
+        try:
+            broken = Place[placeName]["items"][itemName]["broken"]
+        except:
+            print("This item cannot be broken")
+            return
         if broken == True:
             print("The item is already broken")
             return
@@ -145,7 +149,8 @@ def examine_item_in_place(item, place): #input name of item in string
     allPlaces = read_places_and_stuff()
 
     if itemName == False:  # can't find item
-        return itemName
+        return False
     else:
         print(allPlaces[placeName]["items"][itemName]["examine"])
+        return True
 

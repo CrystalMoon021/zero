@@ -1,28 +1,31 @@
 {
   "church": {
     "priest": {
-      "description": "Inside the church a priest prays, he stands when he sees you in the doorway",
+      "description": "Inside the church a priest prays, he stands when he sees you in the doorway. ",
       "count": 2,
       "dialogue0": ["Welcome, welcome, how are you doing this fine day?"],
-      "response0": ["1 Okay, I guess", "2 Good! How about you?", "3 I want to die"],
+      "response0": ["1 Okay, I guess", "2 Good! I'm living the life!", "3 I want to die"],
       "dialogue1": ["That's valid", "Glad to hear it!", "I hope things get better"]
     }
   },
   "house": {
     "old man": {
-      "description": "An old man squints out of the old house's window",
+      "description": "An old man squints out of the old house's window. ",
       "count": 1,
       "dialogue0": ["Get out of my house! I don't talk to rats"]
     }
   },
   "store": {
     "shopkeeper": {
-      "description": "A big jolly shopkeeper sits behind the counter, organizing his wares",
+      "description": "A big jolly shopkeeper sits behind the counter, organizing his wares. ",
       "count": 1,
       "dialogue0": ["Anything catch your interest?"]
     }
   },
   "town": {
+
+  },
+  "cell": {
 
   }
 }
