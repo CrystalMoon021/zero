@@ -2,8 +2,14 @@
 Our game
 
 ## Current Tasks for Coding
+- [ ] Code the collector portion that unlocks the rest of the town
+- [ ] Code the diary txt file
 
-Home
+Intro - DONE
+
+
+
+Home 
 - add a home location
 - have a diary txt file for users to write in
 - have a desk?
