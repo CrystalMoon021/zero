@@ -8,21 +8,21 @@
                 "name": "window",
                 "take": false
             },
-            "soap": {
-                "description": "A bar of soap lies on the sink. ",
-                "examine": "An ordinary bar of soap, you can see a glint of metal. You would need to break the bar of soap.",
-                "name": "soap",
-                "take": true,
-                "broken": false,
-                "brokenText": "You break the bar of soap and a bird-shaped ring falls out.",
-                "used": false,
-                "usedText": "You use the bar of soap and a bird-shaped ring falls out. "
-            },
             "sink": {
                 "description": "A working porcelain sink stands in the corner.",
                 "examine": "I see nothing special about the sink. It's made of porcelain. ",
                 "name": "sink",
                 "take": false
+            },
+            "soap": {
+                "broken": false,
+                "brokenText": "You break the bar of soap and a bird-shaped ring falls out.",
+                "description": "A bar of soap lies on the sink. ",
+                "examine": "An ordinary bar of soap, you can see a glint of metal. You would need to break the bar of soap.",
+                "name": "soap",
+                "take": true,
+                "used": false,
+                "usedText": "You use the bar of soap and a bird-shaped ring falls out. "
             },
             "toilet": {
                 "description": "Opposite to the sink is a dry and dirty toilet. The lid is up. ",
@@ -45,12 +45,13 @@
                 "take": false
             },
             "cross": {
-                "broken": false,
+                "broken": true,
                 "brokenText": "The cross shatters to pieces on the ceramic floor, bits of wires fall out that you quickly pick up. \nThe wires are now in your inventory",
                 "description": "An ornate cross lies on a small mount",
                 "examine": "This cross looks easily breakable",
                 "name": "cross",
-                "take": false
+                "take": false,
+                "used": true
             },
             "desk": {
                 "description": "An old desk stands across the room, one leg is shorter than the other three",

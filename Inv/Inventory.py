@@ -50,7 +50,7 @@ def examine_item_in_inventory(examineItem): #x item cmd
     else:
         print(Bag[itemName]["examine"])
 
-def use_item(item): # use or break item cmd (for now only break)
+def use_item(item, cur_place): # use or break item cmd (for now only break)
     itemName = find_item_name_inventory(item) # check if item exists in inv
     Bag = read_inventory()
 
@@ -67,15 +67,17 @@ def use_item(item): # use or break item cmd (for now only break)
             print("The item is already used")
             return
         else:  # successfully used
-            Bag[itemName]["used"] = True
-            try:
-                Bag[itemName]["broken"] = True
-            except:
-                pass
-            write_inventory(Bag)
-            print(Bag[itemName]["usedText"])
-            ItemEffects.special_check(itemName) # check for certain things like unlocking locations
-
+            if Bag[itemName]["usePlace"] == cur_place:
+                Bag[itemName]["used"] = True
+                try:
+                    Bag[itemName]["broken"] = True
+                except:
+                    pass
+                write_inventory(Bag)
+                print(Bag[itemName]["usedText"])
+                ItemEffects.special_check(itemName) # check for certain things like unlocking locations
+            else:
+                print(f"You see nowhere to use the {itemName} in the {cur_place}")
 def eat_item(item): # eat item cmd
     if item != []:
         Bag = read_inventory()

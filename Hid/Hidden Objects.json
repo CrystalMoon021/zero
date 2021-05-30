@@ -4,6 +4,7 @@
     "examine": "It's two metal wires, maybe useful in the future",
     "name": "wires",
     "used": false,
+    "usePlace": "cell",
     "usedText": "You use the wires to pick the lock. Congrats! You're now free to go outside your cell. Take a look outside. ",
     "take": true
   },

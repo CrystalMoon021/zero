@@ -7,7 +7,11 @@ def basic_commands(cur_place, money):
     #print("\nWhat would you like to do now?")
 
     command = input("> ").lower().split()
-    cmd = command[0].lower()
+    try:
+        cmd = command[0].lower()
+    except: # they just pressed enter blank
+        print("You gotta tell me what to do here bud. Don't just leave me hanging. ")
+        return cur_place, money
 
     if cmd == "take" or (command[0] == "pick" and command[1] == "up") or cmd == "grab":
         Look.pick_up_item(command[1:], cur_place)
@@ -39,17 +43,17 @@ def basic_commands(cur_place, money):
     elif cmd == "break":
         Look.break_item(command[1:], cur_place)
 
-    elif cmd == "use":
-        Inventory.use_item(command[1:])
+    elif cmd == "use" or cmd == "wear" or (command[0] == "put" and command[1] == "on"):
+        Inventory.use_item(command[1:], cur_place)
 
     elif cmd == "drop":
         Look.drop_item(command[1:], cur_place)
 
     elif cmd == "help":
-        print("i: check inventory, x: examine something (must be in inventory), l: look around, gt: go to")
-        print("You can also pick up and buy items")
-        print("To head somewhere or look close at each location use 'go to <placename>' ")
-        print("To talk to someone use 'talk to <person>'")
+        f = open("help.txt", "r")
+        for line in f:
+            print(line, end="")
+        print("")
 
     elif cmd == "swear" or cmd == "curse" or cmd == "klag":
         print("You let out a string of curses that would make your Uncle Rogers proud")

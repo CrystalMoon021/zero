@@ -19,7 +19,7 @@ status = "locked"
 Inventory.reset_inventory()
 Look.place_data_reset()
 
-while status == "locked":
+while True:
     cur_place, money = Commands.basic_commands(cur_place, money)
 
 
