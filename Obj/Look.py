@@ -5,6 +5,13 @@ from Hid import Hidden
 from Obj import Store
 
 
+unlocked = ["cell", "bathroom"]
+
+def place_data_reset():
+    with open("Obj/Place reset.json", "r") as file:  # Prep json for reading
+        allPlaces = json.load(file)  # Read json file convert to dictionary
+    write_places_and_stuff(allPlaces)
+
 def read_places_and_stuff(): # returns dictionary of places
     try:
         with open("Obj/Places and stuff.json", "r") as file:  # Prep json for reading
@@ -19,7 +26,6 @@ def write_places_and_stuff(Place):
         json.dump(Place, file, indent=4, sort_keys=True)  # Rewrite
 
 
-
 def look_around(cur_place, money): # look cmd
     if cur_place == "store":
         Store.arrive_at_Store(cur_place, money) # for store read items diff than other places
@@ -28,7 +34,7 @@ def look_around(cur_place, money): # look cmd
     Interactions.check_for_people(cur_place) # check for people
     Place = read_places_and_stuff()
     for key in Place.keys(): # check for nearby locations
-        if key != cur_place:
+        if key != cur_place and key in unlocked:  # make sure not current location and unlocked
             print(Place[key]["outside"], end="")
     print("")
 
@@ -38,7 +44,10 @@ def read_place_items(examinePlace): # part of look cmd
     try:
         items = Place[placeName]["items"]
         for key in items.keys():
-            print("    " + items[key]["description"])
+            try:
+                print("    " + items[key]["description"])
+            except: # no description
+                continue
     except:
         return
 
@@ -66,13 +75,18 @@ def goto_place_entry(newPlace, cur_place, money): # from the go to cmd, returns 
     elif placeName == cur_place: # already in the place
         print("You are already here")
         return cur_place
-    elif placeName == "store":
-        Store.arrive_at_Store(placeName, money)
-        return "store"
+    elif placeName in unlocked:
+        if placeName == "store":
+            Store.arrive_at_Store(placeName, money)
+            return "store"
+        else:
+            Place = read_places_and_stuff()
+            print(Place[placeName]["entry"])
+            return placeName
     else:
-        Place = read_places_and_stuff()
-        print(Place[placeName]["entry"])
-        return placeName
+        if unlocked == ["cell"]:
+            print("You try the door of your cell, it's locked. It seems like you're stuck in here till you can pick the lock.")
+            return cur_place
 
 def find_item_name(item, place): # check if that item exists in that place
     s = ""
@@ -84,10 +98,10 @@ def find_item_name(item, place): # check if that item exists in that place
     for key in items.keys():  # look thru the items
         if itemName.find(key) != -1:  # found a match
             return key, placeName
-    print("Huh, I can't find that item")
+    print("Huh, I can't find that item here")
     return False, False
 
-def use_break_item(item, place): # use or break item cmd (for now only break)
+def break_item(item, place): # use or break item cmd (for now only break)
     itemName, placeName = find_item_name(item, place) # check if item exists
     Place = read_places_and_stuff()
 
@@ -104,6 +118,10 @@ def use_break_item(item, place): # use or break item cmd (for now only break)
             return
         else:  # successfully broken
             Place[placeName]["items"][itemName]["broken"] = True
+            try:
+                Place[placeName]["items"][itemName]["used"] = True
+            except:
+                pass
             write_places_and_stuff(Place)
             print(Place[placeName]["items"][itemName]["brokenText"])
             Hidden.hidden_obj_unlocked(itemName) # find the hidden item
@@ -145,12 +163,18 @@ def drop_item(item, place): # drop item cmd
         print("You have successfully dropped: " + itemName)
 
 def examine_item_in_place(item, place): #input name of item in string
-    itemName, placeName = find_item_name(item, place)
-    allPlaces = read_places_and_stuff()
+    s = ""
+    Place = read_places_and_stuff()  # repeat code instead of using function just this once to avoid error msg when x item that is not in place but in inv
+    itemName = s.join(item).lower()
+    placeName = place.lower()
+    items = Place[placeName]["items"]
 
-    if itemName == False:  # can't find item
-        return False
-    else:
-        print(allPlaces[placeName]["items"][itemName]["examine"])
-        return True
+    for key in items.keys():  # look thru the items
+        if itemName.find(key) != -1:  # found a match
+            itemName = key
+            print(Place[placeName]["items"][itemName]["examine"])
+            return True
+
+    return False
+
 

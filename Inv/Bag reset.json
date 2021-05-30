@@ -1,0 +1,16 @@
+{
+  "apple": {
+    "description": "An apple that has a worm in it...eww",
+    "eat": "You take a bite of the apple, you feel the rotting pieces of fruit slide down your throat. You feel a bit sick. ",
+    "examine": "Upon closer examination, the apple is rotting. This is disgusting, I suggest you don't eat it.",
+    "name": "apple",
+    "take": true
+  },
+  "dagger": {
+    "description": "A small rusty dagger",
+    "eat": "Are you trying to die?",
+    "examine": "This dagger needs to be sharpened. ",
+    "name": "dagger",
+    "take": true
+  }
+}

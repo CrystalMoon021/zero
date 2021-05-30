@@ -24,7 +24,7 @@ def basic_commands(cur_place, money):
         Look.read_place_description(cur_place)
         Look.look_around(cur_place, money)
 
-    elif cmd == "g" or cmd == "go" or cmd == "gt" or cmd == "travel":
+    elif cmd == "g" or cmd == "go" or cmd == "gt" or cmd == "travel" or cmd == "goto":
         cur_place = Look.goto_place_entry(command[1:], cur_place, money)
 
     elif cmd == "buy":
@@ -36,8 +36,11 @@ def basic_commands(cur_place, money):
     elif cmd == "talk":
         Interactions.talk_to_person(cur_place, command[1:])
 
-    elif cmd == "break" or cmd == "use":
-        Look.use_break_item(command[1:], cur_place) # make more flexible search later
+    elif cmd == "break":
+        Look.break_item(command[1:], cur_place)
+
+    elif cmd == "use":
+        Inventory.use_item(command[1:])
 
     elif cmd == "drop":
         Look.drop_item(command[1:], cur_place)
