@@ -4,7 +4,7 @@
 
 import Commands
 
-cur_place = "base"
+cur_place = "cell"
 money = 20
 
 while True:

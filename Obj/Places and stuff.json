@@ -1,5 +1,5 @@
 {
-    "base": {
+    "cell": {
         "description": "You stand in a plain white cell with simple furnishing. ",
         "entry": "You come back home, and take a rest in the chair. ",
         "items": {
@@ -30,21 +30,19 @@
                 "take": false
             }
         },
-        "name": "base",
-        "outside": "You can see a stone trailing leading back into the base where you live. "
+        "name": "cell",
+        "outside": "You can see a stone trailing leading back into the cell where you live. "
     },
     "church": {
         "description": "You stand in a small white church, light shines through a central window behind the lectern. ",
         "entry": "You enter the church, it is warmer in here. ",
         "items": {
             "lectern": {
-                "description": "",
                 "examine": "I see nothing special about the lectern",
                 "name": "desk",
                 "take": false
             },
             "window": {
-                "description": "",
                 "examine": "I see nothing special about the window",
                 "name": "window",
                 "take": false
@@ -61,6 +59,19 @@
                 "description": "A knob of garlic, seems fresh enough to consume",
                 "examine": "I see nothing special about the garlic",
                 "name": "garlic",
+                "take": true
+            },
+            "key": {
+                "description": "An old house key",
+                "examine": "I see nothing special about the key. ",
+                "name": "key",
+                "take": true
+            },
+            "snail": {
+                "description": "A snail with no legs",
+                "eat": "That is really revolting. I will not allow it. ",
+                "examine": "I see nothing special about the snail, I can't fathom why I have it. It is slimy",
+                "name": "snail",
                 "take": true
             }
         },

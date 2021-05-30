@@ -4,12 +4,22 @@
 
 import Commands
 
-cur_place = "base"
+cur_place = "cell"
 money = 20
 status = "locked"
 
+#
+# def Test():
+#     assert 2 + 2 == 5
+#
+# Test()
+
 while status == "locked":
     cur_place, money = Commands.basic_commands(cur_place, money)
+
+
+
+
 
 
 
