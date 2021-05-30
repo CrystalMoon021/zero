@@ -12,18 +12,5 @@
         "examine": "This dagger needs to be sharpened. ",
         "name": "dagger",
         "take": true
-    },
-    "tea": {
-        "description": "A cup of nice tea",
-        "examine": "I see nothing special about the tea",
-        "name": "tea",
-        "price": 5,
-        "take": true
-    },
-    "wire": {
-        "description": "A strip of metal",
-        "examine": "It's a thin strip of metal maybe useful in the future",
-        "name": "wire",
-        "take": true
     }
 }

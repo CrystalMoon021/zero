@@ -1,7 +1,42 @@
 {
+    "bathroom": {
+        "description": "You stand in a dirty bathroom, mold grows in the corners. ",
+        "entry": "You enter the bathroom and immediately feel repulsed. It is dirty and moldy. ",
+        "items": {
+            "mold": {
+                "examine": "Why do you want to examine mold? That's disgusting. ",
+                "name": "window",
+                "take": false
+            },
+            "soap": {
+                "description": "A bar of soap lies on the sink. ",
+                "examine": "An ordinary bar of soap, you can see a glint of metal. You would need to break the bar of soap.",
+                "name": "soap",
+                "take": true,
+                "broken": false,
+                "brokenText": "You break the bar of soap and a bird-shaped ring falls out.",
+                "used": false,
+                "usedText": "You use the bar of soap and a bird-shaped ring falls out. "
+            },
+            "sink": {
+                "description": "A working porcelain sink stands in the corner.",
+                "examine": "I see nothing special about the sink. It's made of porcelain. ",
+                "name": "sink",
+                "take": false
+            },
+            "toilet": {
+                "description": "Opposite to the sink is a dry and dirty toilet. The lid is up. ",
+                "examine": "I see nothing special about the toilet, it is dirty and dry. ",
+                "name": "toilet",
+                "take": false
+            }
+        },
+        "name": "bathroom",
+        "outside": "You can see the bathroom in your tiny cell from here. "
+    },
     "cell": {
         "description": "You stand in a plain white cell with simple furnishing. ",
-        "entry": "You come back home, and take a rest in the chair. ",
+        "entry": "You come back home to your cell, and take a rest in the chair. ",
         "items": {
             "chair": {
                 "description": "A simple oak chair lies in the corner collecting dust",
@@ -11,7 +46,7 @@
             },
             "cross": {
                 "broken": false,
-                "brokenText": "The cross shatters to pieces on the ceramic floor, bits of wires fall out that you quickly pick up. ",
+                "brokenText": "The cross shatters to pieces on the ceramic floor, bits of wires fall out that you quickly pick up. \nThe wires are now in your inventory",
                 "description": "An ornate cross lies on a small mount",
                 "examine": "This cross looks easily breakable",
                 "name": "cross",
@@ -23,6 +58,12 @@
                 "name": "desk",
                 "take": false
             },
+            "lock": {
+                "description": "A simple lock resides on the door of the cell. ",
+                "examine": "Seems like a regular lock. You could pick it if you had the right materials.",
+                "name": "lock",
+                "take": false
+            },
             "window": {
                 "description": "Thin rays of light shine through the thick glass of the small barred window",
                 "examine": "I see nothing special about the window",
@@ -31,7 +72,7 @@
             }
         },
         "name": "cell",
-        "outside": "You can see a stone trailing leading back into the cell where you live. "
+        "outside": "You can see the door leading back into the cell where you live. "
     },
     "church": {
         "description": "You stand in a small white church, light shines through a central window behind the lectern. ",
@@ -78,6 +119,37 @@
         "name": "house",
         "outside": "A creaky old house with no door stands to the side. There are spiderwebs on the windowsill. "
     },
+    "office": {
+        "description": "You stand in a dimly lit office.",
+        "entry": "You enter the guard's office, which is to the left of your cell. It's just a receptionist's office, repurposed for - sleeping, apparently.",
+        "items": {
+            "guard": {
+                "description": "A guard who is supposed to be on duty is asleep. ",
+                "examine": "His breath stinks and his hair is greasy. ",
+                "name": "guard",
+                "take": false
+            },
+            "pen": {
+                "description": "A pen sit quietly on a table.",
+                "examine": "Seems like a regular pen, it is running out of ink",
+                "name": "pen",
+                "take": true
+            },
+            "table": {
+                "examine": "I see nothing special about the table",
+                "name": "table",
+                "take": false
+            },
+            "wallet": {
+                "description": "A wallet is in the guard's pocket, it is close to falling out. ",
+                "examine": "A picture of the guard and his dog reside inside the wallet. ",
+                "name": "wallet",
+                "take": true
+            }
+        },
+        "name": "office",
+        "outside": "From here you can see the entrance to the guard's office."
+    },
     "store": {
         "description": "You stand in the general store. ",
         "entry": "You entered the local general store, a bell rings to announce your entrance and the shopkeeper looks up. \n'What would you like to buy?' asks the shopkeeper. ",
@@ -94,6 +166,13 @@
                 "examine": "I see nothing special about the hat",
                 "name": "hat",
                 "price": 15,
+                "take": true
+            },
+            "tea": {
+                "description": "A cup of nice tea",
+                "examine": "I see nothing special about the tea",
+                "name": "tea",
+                "price": 5,
                 "take": true
             }
         },

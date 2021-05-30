@@ -3,6 +3,8 @@
 # print("Take a look around")
 
 import Commands
+from Inv import Inventory
+from Obj import Look
 
 cur_place = "cell"
 money = 20
@@ -13,6 +15,9 @@ status = "locked"
 #     assert 2 + 2 == 5
 #
 # Test()
+
+Inventory.reset_inventory()
+Look.place_data_reset()
 
 while status == "locked":
     cur_place, money = Commands.basic_commands(cur_place, money)

@@ -1,8 +1,16 @@
 {
   "cross": {
-    "description": "A strip of metal",
-    "examine": "It's a thin strip of metal maybe useful in the future",
-    "name": "wire",
+    "description": "Two thin but sturdy wires",
+    "examine": "It's two metal wires, maybe useful in the future",
+    "name": "wires",
+    "used": false,
+    "usedText": "You use the wires to pick the lock. Congrats! You're now free to go outside your cell. Take a look outside. ",
+    "take": true
+  },
+  "soap": {
+    "description": "Bird-shaped ring",
+    "examine": "It's a bird-shaped ring, maybe valuable to the right person. ",
+    "name": "ring",
     "take": true
   }
 }

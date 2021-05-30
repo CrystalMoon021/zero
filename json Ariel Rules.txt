@@ -12,6 +12,8 @@ key: name of item
 Places and stuff
 key: location name
 - description, name, items
+- if you don't want the item desc to be printed don't have the key desc
+   - will be skipped cause try except
 
 Dialgue
 count: number of lines (dialogue and response) minus one

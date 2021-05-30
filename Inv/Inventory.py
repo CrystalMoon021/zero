@@ -1,4 +1,10 @@
 import json
+from Inv import ItemEffects
+
+def reset_inventory():
+    with open("Inv/Bag reset.json", "r") as file:  # Prep json for reading
+        Bag = json.load(file)  # Read json file convert to dictionary
+    write_inventory(Bag)
 
 def read_inventory(): # returns dictionary of Bag
     try:
@@ -39,9 +45,36 @@ def examine_item_in_inventory(examineItem): #x item cmd
     itemName = find_item_name_inventory(examineItem)
 
     if itemName == False:
+        print("You don't see that item nearby either. ")
         return
     else:
         print(Bag[itemName]["examine"])
+
+def use_item(item): # use or break item cmd (for now only break)
+    itemName = find_item_name_inventory(item) # check if item exists in inv
+    Bag = read_inventory()
+
+    if itemName == False:  # can't find item
+        print("Pick up items to use them. ")
+        return
+    else:
+        try:
+            used = Bag[itemName]["used"]
+        except:
+            print("This item cannot be used")
+            return
+        if used == True:
+            print("The item is already used")
+            return
+        else:  # successfully used
+            Bag[itemName]["used"] = True
+            try:
+                Bag[itemName]["broken"] = True
+            except:
+                pass
+            write_inventory(Bag)
+            print(Bag[itemName]["usedText"])
+            ItemEffects.special_check(itemName) # check for certain things like unlocking locations
 
 def eat_item(item): # eat item cmd
     if item != []:
