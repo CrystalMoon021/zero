@@ -5,6 +5,7 @@ Our game
 - [ ] Code the collector portion that unlocks the rest of the town
 - [ ] Code the diary txt file
 - [ ] Should we be able to use items not in inv?
+- [ ] Make broken and use the same key in database?
 
 Intro - DONE
 
