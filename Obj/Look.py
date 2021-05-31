@@ -109,22 +109,13 @@ def break_item(item, place): # use or break item cmd (for now only break)
         return
     else:
         try:
-            broken = Place[placeName]["items"][itemName]["broken"]
+            print(Place[placeName]["items"][itemName]["brokenText"])
         except:
             print("This item cannot be broken")
             return
-        if broken == True:
-            print("The item is already broken")
-            return
-        else:  # successfully broken
-            Place[placeName]["items"][itemName]["broken"] = True
-            try:
-                Place[placeName]["items"][itemName]["used"] = True
-            except:
-                pass
-            write_places_and_stuff(Place)
-            print(Place[placeName]["items"][itemName]["brokenText"])
-            Hidden.hidden_obj_unlocked(itemName) # find the hidden item
+        del Place[placeName]["items"][itemName]  # remove item after broken
+        write_places_and_stuff(Place)
+        Hidden.hidden_obj_unlocked(itemName)  # find the hidden item
 
 def pick_up_item(item, place): # pick up item cmd
     itemName, placeName = find_item_name(item, place) # check if item exists in that place
@@ -145,23 +136,6 @@ def pick_up_item(item, place): # pick up item cmd
             write_places_and_stuff(allPlaces)
             print("You successfully picked up: " + itemName)
 
-def drop_item(item, place): # drop item cmd
-    itemName = Inventory.find_item_name_inventory(item) # check if exists in inventory
-    Bag = Inventory.read_inventory()
-    Place = read_places_and_stuff()
-
-    if itemName == False:  # can't find item
-        return
-    elif place == "store" or place == "church":
-        print("'This isn't a dumpster!' You return the item to your inventory. ")
-        return
-    else:
-        Place[place]["items"][itemName] = Bag[itemName] # add item to place database
-        del Bag[itemName] # delete item from inv
-        write_places_and_stuff(Place)
-        Inventory.write_inventory(Bag)  # discontinued function only kept for making testing code easier
-        print("You have successfully dropped: " + itemName)
-
 def examine_item_in_place(item, place): #input name of item in string
     s = ""
     Place = read_places_and_stuff()  # repeat code instead of using function just this once to avoid error msg when x item that is not in place but in inv
@@ -176,5 +150,23 @@ def examine_item_in_place(item, place): #input name of item in string
             return True
 
     return False
+
+
+# def drop_item(item, place): # drop item cmd
+#     itemName = Inventory.find_item_name_inventory(item) # check if exists in inventory
+#     Bag = Inventory.read_inventory()
+#     Place = read_places_and_stuff()
+#
+#     if itemName == False:  # can't find item
+#         return
+#     elif place == "store" or place == "church":
+#         print("'This isn't a dumpster!' You return the item to your inventory. ")
+#         return
+#     else:
+#         Place[place]["items"][itemName] = Bag[itemName] # add item to place database
+#         del Bag[itemName] # delete item from inv
+#         write_places_and_stuff(Place)
+#         Inventory.write_inventory(Bag)  # discontinued function only kept for making testing code easier
+#         print("You have successfully dropped: " + itemName)
 
 

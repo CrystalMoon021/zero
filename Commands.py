@@ -43,11 +43,11 @@ def basic_commands(command, cur_place, money):
     elif cmd == "break":
         Look.break_item(command[1:], cur_place)
 
-    elif cmd == "use" or cmd == "wear" or (command[0] == "put" and command[1] == "on"):
+    elif cmd == "use":
         cur_place = Inventory.use_item(command[1:], cur_place)
 
-    elif cmd == "drop":
-        Look.drop_item(command[1:], cur_place)
+    #elif cmd == "wear" or (command[0] == "put" and command[1] == "on"):
+        #JANICE
 
     elif cmd == "help":
         f = open("help.txt", "r")
@@ -64,3 +64,8 @@ def basic_commands(command, cur_place, money):
         print("Sorry no such option is available")
 
     return cur_place, money
+
+
+
+# elif cmd == "drop":
+#     Look.drop_item(command[1:], cur_place)
