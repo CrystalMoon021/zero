@@ -1,5 +1,6 @@
 
 from Obj import Look
+from Obj import Diary
 import Commands
 
 def special_check(item, cur_place):
@@ -12,5 +13,7 @@ def special_check(item, cur_place):
         print("He ushers you out of the office and opens the front door, 'Go out and do what you're paid for!' he exclaims shoving you out of the building. ")
         Look.unlocked.extend(["church", "house", "store", "town"])
         return "town" # change location to town
+    elif item == "pen":
+        Diary.write_in_diary("diary", cur_place)
     else:
         return cur_place

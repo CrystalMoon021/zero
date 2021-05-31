@@ -55,6 +55,12 @@
         "name": "desk",
         "take": false
       },
+      "diary": {
+        "description": "A leather cover back diary sits neatly on the desk. ",
+        "examine": "You flip open the diary to see that it's blank. You could probably write in it if you had a pen. ",
+        "name": "diary",
+        "take": false
+      },
       "lock": {
         "description": "A simple lock resides on the door of the cell. ",
         "examine": "Seems like a regular lock. You could pick it if you had the right materials.",
@@ -130,6 +136,8 @@
         "description": "A pen sit quietly on a table.",
         "examine": "Seems like a regular pen, it is running out of ink",
         "name": "pen",
+        "usePlace": "cell",
+        "useText": "You pull out your pen to write in your diary. ",
         "take": true
       },
       "uniform": {

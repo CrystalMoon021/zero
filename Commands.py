@@ -1,6 +1,6 @@
 from Inv import Inventory
 from Speech import Interactions
-from Obj import Look, Store
+from Obj import Look, Store, Diary
 
 
 def basic_commands(command, cur_place, money):
@@ -60,6 +60,10 @@ def basic_commands(command, cur_place, money):
 
     elif cmd == "eat":
         Inventory.eat_item(command[1:])
+
+    elif cmd == "write":
+        Diary.write_in_diary(command[1:], cur_place)
+
     else:
         print("Sorry no such option is available")
 
