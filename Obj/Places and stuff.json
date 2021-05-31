@@ -48,6 +48,12 @@
                 "name": "desk",
                 "take": false
             },
+            "diary": {
+                "description": "A leather cover back diary sits neatly on the desk. ",
+                "examine": "You flip open the diary to see that it's blank. You could probably write in it if you had a pen. ",
+                "name": "diary",
+                "take": false
+            },
             "lock": {
                 "description": "A simple lock resides on the door of the cell. ",
                 "examine": "Seems like a regular lock. You could pick it if you had the right materials.",
@@ -118,12 +124,6 @@
                 "examine": "His breath stinks and his hair is greasy. ",
                 "name": "guard",
                 "take": false
-            },
-            "pen": {
-                "description": "A pen sit quietly on a table.",
-                "examine": "Seems like a regular pen, it is running out of ink",
-                "name": "pen",
-                "take": true
             },
             "table": {
                 "examine": "I see nothing special about the table",

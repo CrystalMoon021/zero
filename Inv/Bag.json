@@ -13,6 +13,14 @@
         "name": "dagger",
         "take": true
     },
+    "pen": {
+        "description": "A pen sit quietly on a table.",
+        "examine": "Seems like a regular pen, it is running out of ink",
+        "name": "pen",
+        "take": true,
+        "usePlace": "cell",
+        "useText": "You pull out your pen to write in your diary. "
+    },
     "wires": {
         "description": "Two thin but sturdy wires",
         "examine": "It's two metal wires, maybe useful in the future",
