@@ -57,7 +57,7 @@ def talk_to_person(cur_place, person): # talk to cmd
                     except:
                         print("Please provide a number only")
             except:
-                pass # there is no response in database
+                pass # there is no response planned in dialogue database
 
 
 

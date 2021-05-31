@@ -43,7 +43,6 @@
         "take": false
       },
       "cross": {
-        "broken": false,
         "brokenText": "The cross shatters to pieces on the ceramic floor, bits of wires fall out that you quickly pick up. \nThe wires are now in your inventory",
         "description": "An ornate cross lies on a small mount",
         "examine": "This cross looks easily breakable",
