@@ -79,7 +79,7 @@ use_item function
 - must wear something at any one time
 - can wear from place database or inv
 - can also reuse the find_item_name function to check if item exists in database
-    - you would also need to check if item in inventory
+    - you would also need to check if item in inventory using find_item_name_inventory
 
 ### Other Functions
 - Help: reads the help.txt file and prints it out line by line
