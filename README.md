@@ -4,7 +4,8 @@ Our game
 ## Current Tasks for Coding
 - [ ] Code the collector portion that unlocks the rest of the town
 - [ ] Code the diary txt file
-- [ ] Should we be able to use items not in inv?
+- [ ] Should we be able to use items not in inv? (up to you do you think that's better since furniture and stuff but also item weirdness - Janice)
+     - alternatively we could categorize items and make it so that furniture has different interactions but again that is more work for you soooo  
 - [ ] Make broken and use the same key in database?
 
 Intro - DONE
