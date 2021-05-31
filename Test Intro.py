@@ -19,8 +19,17 @@ status = "locked"
 Inventory.reset_inventory()
 Look.place_data_reset()
 
+cur_place, money = Commands.basic_commands("break cross", cur_place, money)
+cur_place, money = Commands.basic_commands("use wires", cur_place, money)
+cur_place, money = Commands.basic_commands("go to office", cur_place, money)
+cur_place, money = Commands.basic_commands("pick up uniform", cur_place, money)
+cur_place, money = Commands.basic_commands("wear uniform", cur_place, money)
+
+
+
 while True:
-    cur_place, money = Commands.basic_commands(cur_place, money)
+    command = input("> ")
+    cur_place, money = Commands.basic_commands(command, cur_place, money)
 
 
 

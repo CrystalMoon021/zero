@@ -3,8 +3,11 @@ General Rules
 Databases that are edited in game are only:
 - Bag
 - Places and stuff
+MEANING: IF YOU WANT TO CHANGE A LINE CHANGE IT IN: Bag reset.json or Place reset.json
+- or hidden objects.json or dialogue.json
 
-Databases that are read only ingame
+
+Databases that are read only in game
 - Bag reset
 - Hidden Objects
 - Place reset
@@ -26,6 +29,6 @@ key: location name
 - if you don't want the item desc to be printed don't have the key desc
    - will be skipped cause try except
 
-Dialgue
+Dialogue
 count: number of lines (dialogue and response) minus one
 - dialogue in list format
