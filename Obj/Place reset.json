@@ -14,9 +14,7 @@
         "name": "soap",
         "take": true,
         "broken": false,
-        "brokenText": "You break the bar of soap and a bird-shaped ring falls out.",
-        "used": false,
-        "usedText": "You use the bar of soap and a bird-shaped ring falls out. "
+        "brokenText": "You break the bar of soap and a bird-shaped ring falls out."
       },
       "sink": {
         "description": "A working porcelain sink stands in the corner.",

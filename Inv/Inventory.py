@@ -55,32 +55,23 @@ def use_item(item, cur_place): # use or break item cmd (for now only break)
     Bag = read_inventory()
 
     if itemName == False:  # can't find item
-        #check in place??
-        print("Pick up items to use them. ")
+        print("Pick up items first, to use items they must be in your inventory. ")
         return cur_place
     else:
-        try:
-            used = Bag[itemName]["used"]
+        try: # check if can be used
+            Bag[itemName]["usePlaces"]
         except:
             print("This item cannot be used")
             return cur_place
-        if used == True:
-            print("The item is already used")
+        if cur_place not in Bag[itemName]["usePlaces"]:
+            print(f"You see nowhere to use the {itemName} in the {cur_place}")
             return cur_place
-        else:  # successfully used
-            if Bag[itemName]["usePlace"] == cur_place:
-                Bag[itemName]["used"] = True
-                try:
-                    Bag[itemName]["broken"] = True
-                except:
-                    pass
-                write_inventory(Bag)
-                print(Bag[itemName]["usedText"])
-                cur_place = ItemEffects.special_check(itemName, cur_place) # check for certain things like unlocking locations
-                return cur_place
-            else:
-                print(f"You see nowhere to use the {itemName} in the {cur_place}")
-                return cur_place
+        else: # successfully used
+            print(Bag[itemName]["usedText"][cur_place])
+            write_inventory(Bag)
+            cur_place = ItemEffects.special_check(itemName, cur_place)  # check for certain things like unlocking locations
+            return cur_place
+
 def eat_item(item): # eat item cmd
     if item != []:
         Bag = read_inventory()
@@ -95,7 +86,7 @@ def eat_item(item): # eat item cmd
             except:
                 print("I don't think the " + itemName + " would agree with you")
     else:
-        print("What are you eating?")
+        print("Indicate what you are eating. ")
 
 
 

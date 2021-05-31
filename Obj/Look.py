@@ -118,12 +118,10 @@ def break_item(item, place): # use or break item cmd (for now only break)
             return
         else:  # successfully broken
             Place[placeName]["items"][itemName]["broken"] = True
-            try:
-                Place[placeName]["items"][itemName]["used"] = True
-            except:
-                pass
-            write_places_and_stuff(Place)
             print(Place[placeName]["items"][itemName]["brokenText"])
+            del Place[placeName]["items"][itemName] # remove item after broken
+            write_places_and_stuff(Place)
+
             Hidden.hidden_obj_unlocked(itemName) # find the hidden item
 
 def pick_up_item(item, place): # pick up item cmd
