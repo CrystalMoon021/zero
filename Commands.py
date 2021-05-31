@@ -3,10 +3,10 @@ from Speech import Interactions
 from Obj import Look, Store
 
 
-def basic_commands(cur_place, money):
+def basic_commands(command, cur_place, money):
     #print("\nWhat would you like to do now?")
 
-    command = input("> ").lower().split()
+    command = command.lower().split()
     try:
         cmd = command[0].lower()
     except: # they just pressed enter blank
@@ -44,7 +44,7 @@ def basic_commands(cur_place, money):
         Look.break_item(command[1:], cur_place)
 
     elif cmd == "use" or cmd == "wear" or (command[0] == "put" and command[1] == "on"):
-        Inventory.use_item(command[1:], cur_place)
+        cur_place = Inventory.use_item(command[1:], cur_place)
 
     elif cmd == "drop":
         Look.drop_item(command[1:], cur_place)
