@@ -18,8 +18,12 @@
         "examine": "Seems like a regular pen, it is running out of ink",
         "name": "pen",
         "take": true,
-        "usePlace": "cell",
-        "useText": "You pull out your pen to write in your diary. "
+        "usePlaces": [
+            "cell"
+        ],
+        "usedText": {
+            "cell": "You pull out your pen to write in your diary. "
+        }
     },
     "wires": {
         "description": "Two thin but sturdy wires",

@@ -25,7 +25,7 @@ cur_place, money = Commands.basic_commands("use wires", cur_place, money)
 cur_place, money = Commands.basic_commands("go to office", cur_place, money)
 cur_place, money = Commands.basic_commands("pick up pen", cur_place, money)
 cur_place, money = Commands.basic_commands("go to cell", cur_place, money)
-cur_place, money = Commands.basic_commands("write in diary", cur_place, money)
+# cur_place, money = Commands.basic_commands("write in diary", cur_place, money)
 
 while True:
     command = input("> ")

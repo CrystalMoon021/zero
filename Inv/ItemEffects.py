@@ -3,7 +3,7 @@ from Obj import Look
 from Obj import Diary
 import Commands
 
-def special_check(item, cur_place):
+def special_check(item, cur_place): # return new location to update cur_place
     if item == "wires":
         Look.unlocked.append("office") #unlock new locations
         return cur_place
@@ -15,5 +15,6 @@ def special_check(item, cur_place):
         return "town" # change location to town
     elif item == "pen":
         Diary.write_in_diary("diary", cur_place)
+        return cur_place
     else:
         return cur_place
