@@ -136,8 +136,10 @@
         "description": "A pen sit quietly on a table.",
         "examine": "Seems like a regular pen, it is running out of ink",
         "name": "pen",
-        "usePlace": "cell",
-        "useText": "You pull out your pen to write in your diary. ",
+        "usePlaces": ["cell"],
+        "usedText": {
+          "cell": "You pull out your pen to write in your diary. "
+        },
         "take": true
       },
       "uniform": {
