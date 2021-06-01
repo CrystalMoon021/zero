@@ -125,19 +125,22 @@
                 "name": "guard",
                 "take": false
             },
+            "pen": {
+                "description": "A pen sit quietly on a table.",
+                "examine": "Seems like a regular pen, it is running out of ink",
+                "name": "pen",
+                "take": true,
+                "usePlaces": [
+                    "cell"
+                ],
+                "usedText": {
+                    "cell": "You pull out your pen to write in your diary. "
+                }
+            },
             "table": {
                 "examine": "I see nothing special about the table",
                 "name": "table",
                 "take": false
-            },
-            "uniform": {
-                "description": "A spare uniform lies haphazardly on the ceramic floor.",
-                "examine": "Seems like the standard guard uniforms given out by the foundation. ",
-                "name": "uniform",
-                "take": true,
-                "usePlace": "office",
-                "used": false,
-                "usedText": "You put on the uniform, wow Ariel is bad at writing. You look just like any other guard. "
             },
             "wallet": {
                 "description": "A wallet is in the guard's pocket, it is close to falling out. ",
