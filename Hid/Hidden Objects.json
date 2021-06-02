@@ -14,5 +14,15 @@
     "examine": "It's a bird-shaped ring, maybe valuable to the right person. ",
     "name": "ring",
     "take": true
+  },
+  "pen": {
+    "description": "A pen sit quietly on a table.",
+    "examine": "Seems like a regular pen, it is running out of ink",
+    "name": "pen",
+    "usePlaces": ["cell"],
+    "usedText": {
+      "cell": "You pull out your pen to write in your diary. "
+    },
+    "take": true
   }
 }
