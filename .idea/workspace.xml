@@ -3,6 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="86c07ba5-946f-4410-8c21-0143bc085d88" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hid/Hidden Objects.json" beforeDir="false" afterPath="$PROJECT_DIR$/Hid/Hidden Objects.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inv/Bag.json" beforeDir="false" afterPath="$PROJECT_DIR$/Inv/Bag.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inv/ItemEffects.py" beforeDir="false" afterPath="$PROJECT_DIR$/Inv/ItemEffects.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Obj/Place reset.json" beforeDir="false" afterPath="$PROJECT_DIR$/Obj/Place reset.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Obj/Places and stuff.json" beforeDir="false" afterPath="$PROJECT_DIR$/Obj/Places and stuff.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test Intro.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test Intro.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
