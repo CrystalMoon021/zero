@@ -10,6 +10,8 @@ Our game
 
 Intro - DONE
 
+Exit function - go to last location?
+
 
 
 Home 
