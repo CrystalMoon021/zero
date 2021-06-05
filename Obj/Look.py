@@ -34,7 +34,7 @@ def look_around(cur_place, money): # look cmd
     Interactions.check_for_people(cur_place) # check for people
     Place = read_places_and_stuff()
     for key in Place.keys(): # check for nearby locations
-        unlocked = Pathing.check_unlocked()
+        unlocked = Pathing.check_unlocked(cur_place)
         if key != cur_place and key in unlocked:  # make sure not current location and unlocked
             print(Place[key]["outside"], end="")
     print("")

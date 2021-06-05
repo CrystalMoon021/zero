@@ -11,20 +11,25 @@ def write_map(Place):
     with open("Path/Map.json", "w") as file:  # Prep json for writing
         json.dump(Place, file, indent=4, sort_keys=True)  # Rewrite
 
-def read_paths():
+def read_map():
     with open("Path/Map.json", "r") as file:  # Prep json for reading
-        Paths = json.load(file)
-    return Paths
+        Map = json.load(file)
+    return Map
 
 def check_unlocked(cur_place):
-    Paths = read_paths()
-    return Paths[cur_place]
+    Map = read_map()
+    return Map[cur_place]
 
+def unlock_places(cur_place, places):
+    Map = read_map()
+    for place in places:
+        Map[cur_place][place] = True
+    write_map(Map)
 
 def travel(destination, cur_place, money):
-    Paths = read_paths()
+    Map = read_map()
     try:
-        checkPath = Paths[cur_place][destination]
+        checkPath = Map[cur_place][destination]
         if checkPath == True: # meaning you can get there
             cur_place = destination
             print("You have arrived at: " + cur_place)
@@ -35,7 +40,7 @@ def travel(destination, cur_place, money):
                 print(Place[cur_place]["entry"])
             return cur_place
         elif checkPath == False: # it's possible but right now it's a locked location
-            print(Paths[cur_place]["locked"])
+            print(Map[cur_place]["locked"])
             return cur_place
     except:
         print("You cannot travel to the " + destination + " from the " + cur_place)
