@@ -9,7 +9,8 @@
   },
   "office": {
     "cell": true,
-    "town": true
+    "town": false,
+    "locked": "In order to leave this building you would need to trick the other guards."
   },
   "church": {
     "town": true
@@ -23,7 +24,9 @@
   "town": {
     "house": true,
     "church": true,
-    "store": true
+    "store": true,
+    "cell": true,
+    "office": true
   }
 
 }
