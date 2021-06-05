@@ -3,9 +3,9 @@ from Inv import Inventory
 from Speech import Interactions
 from Hid import Hidden
 from Obj import Store
+from Path import Pathing
 
 
-unlocked = ["cell", "bathroom"]
 
 def place_data_reset():
     with open("Obj/Place reset.json", "r") as file:  # Prep json for reading
@@ -34,6 +34,7 @@ def look_around(cur_place, money): # look cmd
     Interactions.check_for_people(cur_place) # check for people
     Place = read_places_and_stuff()
     for key in Place.keys(): # check for nearby locations
+        unlocked = Pathing.check_unlocked()
         if key != cur_place and key in unlocked:  # make sure not current location and unlocked
             print(Place[key]["outside"], end="")
     print("")
@@ -70,23 +71,18 @@ def find_place_name(input): # check if the place exists
 
 def goto_place_entry(newPlace, cur_place, money): # from the go to cmd, returns new value for cur_place
     placeName = find_place_name(newPlace) # check if place exists in database to go to
+
     if placeName == False:
         return cur_place
     elif placeName == cur_place: # already in the place
         print("You are already here")
         return cur_place
-    elif placeName in unlocked:
-        if placeName == "store":
-            Store.arrive_at_Store(placeName, money)
-            return "store"
-        else:
-            Place = read_places_and_stuff()
-            print(Place[placeName]["entry"])
-            return placeName
     else:
-        if unlocked == ["cell", "bathroom"]:
-            print("You try the door of your cell, it's locked. It seems like you're stuck in here till you can pick the lock.")
-            return cur_place
+        cur_place = Pathing.travel(placeName, cur_place, money)
+        return cur_place
+
+
+
 
 def find_item_name(item, place): # check if that item exists in that place
     s = ""

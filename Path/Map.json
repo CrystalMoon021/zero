@@ -1,0 +1,28 @@
+{
+    "bathroom": {
+        "cell": true
+    },
+    "cell": {
+        "bathroom": true,
+        "locked": "You try the door of your cell, it's locked. It seems like you're stuck in here till you can pick the lock.",
+        "office": false
+    },
+    "church": {
+        "town": true
+    },
+    "house": {
+        "town": true
+    },
+    "office": {
+        "cell": true,
+        "town": true
+    },
+    "store": {
+        "town": true
+    },
+    "town": {
+        "church": true,
+        "house": true,
+        "store": true
+    }
+}
