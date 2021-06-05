@@ -26,7 +26,7 @@ def unlock_places(cur_place, places):
         Map[cur_place][place] = True
     write_map(Map)
 
-def travel(destination, cur_place, money):
+def travel(destination, cur_place, money): # destination and place are already checked to be valid in look
     Map = read_map()
     try:
         checkPath = Map[cur_place][destination]
@@ -42,7 +42,7 @@ def travel(destination, cur_place, money):
         elif checkPath == False: # it's possible but right now it's a locked location
             print(Map[cur_place]["locked"])
             return cur_place
-    except:
+    except: # will never be possible, there is just no way to get there
         print("You cannot travel to the " + destination + " from the " + cur_place)
         return cur_place
 
