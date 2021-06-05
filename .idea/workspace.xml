@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="86c07ba5-946f-4410-8c21-0143bc085d88" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/MAIN.py" beforeDir="false" afterPath="$PROJECT_DIR$/MAIN.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Obj/Places and stuff.json" beforeDir="false" afterPath="$PROJECT_DIR$/Obj/Places and stuff.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +29,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/MAIN.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Zero pathing" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
@@ -200,10 +199,10 @@
     </configuration>
     <list>
       <item itemvalue="Python.Command.py" />
-      <item itemvalue="Python.Test Intro" />
       <item itemvalue="Python.Inventory" />
       <item itemvalue="Python.Lodge" />
       <item itemvalue="Python.Main.py" />
+      <item itemvalue="Python.Test Intro" />
       <item itemvalue="Python.testing" />
     </list>
     <recent_temporary>
