@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="86c07ba5-946f-4410-8c21-0143bc085d88" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Inv/Bag.json" beforeDir="false" afterPath="$PROJECT_DIR$/Inv/Bag.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Inv/ItemEffects.py" beforeDir="false" afterPath="$PROJECT_DIR$/Inv/ItemEffects.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MAIN.py" beforeDir="false" afterPath="$PROJECT_DIR$/MAIN.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Obj/Places and stuff.json" beforeDir="false" afterPath="$PROJECT_DIR$/Obj/Places and stuff.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Path/Map reset.json" beforeDir="false" afterPath="$PROJECT_DIR$/Path/Map reset.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Path/Map.json" beforeDir="false" afterPath="$PROJECT_DIR$/Path/Map.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Path/Pathing.py" beforeDir="false" afterPath="$PROJECT_DIR$/Path/Pathing.py" afterDir="false" />
-    </list>
+    <list default="true" id="86c07ba5-946f-4410-8c21-0143bc085d88" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

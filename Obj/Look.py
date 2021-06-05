@@ -34,7 +34,7 @@ def look_around(cur_place, money): # look cmd
     Interactions.check_for_people(cur_place) # check for people
     Place = read_places_and_stuff()
     for key in Place.keys(): # check for nearby locations
-        unlocked = Pathing.check_unlocked(cur_place)
+        unlocked = Pathing.check_unlocked(cur_place) # only read the unlocked locations
         if key != cur_place and key in unlocked:  # make sure not current location and unlocked
             print(Place[key]["outside"], end="")
     print("")
@@ -72,12 +72,12 @@ def find_place_name(input): # check if the place exists
 def goto_place_entry(newPlace, cur_place, money): # from the go to cmd, returns new value for cur_place
     placeName = find_place_name(newPlace) # check if place exists in database to go to
 
-    if placeName == False:
+    if placeName == False: # place doesn't exist
         return cur_place
     elif placeName == cur_place: # already in the place
         print("You are already here")
         return cur_place
-    else:
+    else: # Place exists
         cur_place = Pathing.travel(placeName, cur_place, money)
         return cur_place
 

@@ -25,8 +25,10 @@
         "town": true
     },
     "town": {
+        "cell": true,
         "church": true,
         "house": true,
+        "office": true,
         "store": true
     }
 }

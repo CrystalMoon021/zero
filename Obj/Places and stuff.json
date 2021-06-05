@@ -138,7 +138,7 @@
             }
         },
         "name": "office",
-        "outside": "From here you can see the entrance to the guard's office."
+        "outside": "From here you can see the entrance to the guard's office. "
     },
     "store": {
         "description": "You stand in the general store. ",
