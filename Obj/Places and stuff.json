@@ -125,6 +125,18 @@
                 "name": "guard",
                 "take": false
             },
+            "pen": {
+                "description": "A pen sit quietly on a table.",
+                "examine": "Seems like a regular pen, it is running out of ink",
+                "name": "pen",
+                "take": true,
+                "usePlaces": [
+                    "cell"
+                ],
+                "usedText": {
+                    "cell": "You pull out your pen to write in your diary. "
+                }
+            },
             "table": {
                 "examine": "I see nothing special about the table",
                 "name": "table",

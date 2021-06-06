@@ -47,7 +47,7 @@ def basic_commands(command, cur_place, money):
         cur_place = Inventory.use_item(command[1:], cur_place)
 
     elif cmd == "wear" or (command[0] == "put" and command[1] == "on"):
-        cur_place = Inventory.use_item(command[1:], cur_place)
+        cur_place = Inventory.wear_item(command[1:], cur_place)
 
     elif cmd == "help":
         f = open("help.txt", "r")
