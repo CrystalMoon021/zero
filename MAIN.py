@@ -16,12 +16,12 @@ Look.place_data_reset()
 Pathing.path_data_reset()
 
 # Testing
-# cur_place, money = Commands.basic_commands("break cross", cur_place, money)
-# cur_place, money = Commands.basic_commands("use wires", cur_place, money)
-# cur_place, money = Commands.basic_commands("go to office", cur_place, money)
-# cur_place, money = Commands.basic_commands("pick up uniform", cur_place, money)
-# cur_place, money = Commands.basic_commands("wear uniform", cur_place, money)
-
+cur_place, money = Commands.basic_commands("break cross", cur_place, money)
+cur_place, money = Commands.basic_commands("use wires", cur_place, money)
+cur_place, money = Commands.basic_commands("go to office", cur_place, money)
+cur_place, money = Commands.basic_commands("pick up uniform", cur_place, money)
+cur_place, money = Commands.basic_commands("use uniform", cur_place, money)
+cur_place, money = Commands.basic_commands("wear uniform", cur_place, money)
 
 while True:
     command = input("> ")

@@ -68,9 +68,21 @@ def wear_item(item, cur_place):
             return cur_place
         else:
             # item in places
-            Look.pick_up_item(itemName, cur_place) # will check if store and if in place database again
+            Look.pick_up_item(itemName, cur_place) # make sure to pick up item if in places since we work in inventory from now
     enablePrint()  # allow print again in case it didn't go thru loop
-    cur_place = use_item(itemName, cur_place)  # update cur place based on special effects of item
+
+    Bag = read_inventory()
+    try:  # check if can be used
+        wearable = Bag[itemName]["wear"]
+    except:
+        print("This item cannot be worn")
+        return cur_place
+    try: # see if there is special dialogue
+        print(Bag[itemName]["wearText"][cur_place])
+    except:
+        print("You wear the " + itemName)
+    write_inventory(Bag)
+    cur_place = ItemEffects.special_check(itemName, cur_place)  # update cur place based on special effects of item
     return cur_place
 
 
@@ -82,7 +94,7 @@ def use_item(item, cur_place): # use or break item cmd (for now only break)
         print("Pick up items first, to use items they must be in your inventory. ")
         return cur_place
     else:
-        try: # check if can be used
+        try: # check if can be used anywhere
             Bag[itemName]["usePlaces"]
         except:
             print("This item cannot be used")
