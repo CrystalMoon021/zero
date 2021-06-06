@@ -82,8 +82,6 @@ def goto_place_entry(newPlace, cur_place, money): # from the go to cmd, returns 
         return cur_place
 
 
-
-
 def find_item_name(item, place): # check if that item exists in that place
     s = ""
     Place = read_places_and_stuff()
@@ -132,6 +130,8 @@ def pick_up_item(item, place): # pick up item cmd
             write_places_and_stuff(allPlaces)
             print("You successfully picked up: " + itemName)
 
+
+
 def examine_item_in_place(item, place): #input name of item in string
     s = ""
     Place = read_places_and_stuff()  # repeat code instead of using function just this once to avoid error msg when x item that is not in place but in inv
@@ -146,6 +146,7 @@ def examine_item_in_place(item, place): #input name of item in string
             return True
 
     return False
+
 
 
 # def drop_item(item, place): # drop item cmd

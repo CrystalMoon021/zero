@@ -1,5 +1,17 @@
 import json
 from Inv import ItemEffects
+from Obj import Look
+
+import sys, os
+
+# Disable printing
+def blockPrint():
+    sys.stdout = open(os.devnull, 'w')
+
+# Restore printing
+def enablePrint():
+    sys.stdout = sys.__stdout__
+
 
 def reset_inventory():
     with open("Inv/Bag reset.json", "r") as file:  # Prep json for reading
@@ -49,6 +61,24 @@ def examine_item_in_inventory(examineItem): #x item cmd
         return
     else:
         print(Bag[itemName]["examine"])
+
+def wear_item(item, place):
+    blockPrint() # avoid printing error msg for looking in inv and places
+    itemName = find_item_name_inventory(item)
+    cur_place = place
+
+    if itemName == False:
+        itemPlaceName, placeName = Look.find_item_name(item, place)  # check if item exists in that place
+        enablePrint() # allow print
+        if itemPlaceName == False:  # can't find item
+            print("I cannot find that item in your inventory or here")
+            return cur_place
+        else:
+            # item in places
+            Look.pick_up_item(itemPlaceName, placeName) # will check if store and if in place database again
+    cur_place = use_item(itemPlaceName, placeName)  # update cur place based on special effects of item
+    return cur_place
+
 
 def use_item(item, cur_place): # use or break item cmd (for now only break)
     itemName = find_item_name_inventory(item) # check if item exists in inv
