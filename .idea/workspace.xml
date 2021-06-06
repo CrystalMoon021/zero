@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="86c07ba5-946f-4410-8c21-0143bc085d88" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Commands.py" beforeDir="false" afterPath="$PROJECT_DIR$/Commands.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Inv/Bag.json" beforeDir="false" afterPath="$PROJECT_DIR$/Inv/Bag.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Inv/Inventory.py" beforeDir="false" afterPath="$PROJECT_DIR$/Inv/Inventory.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MAIN.py" beforeDir="false" afterPath="$PROJECT_DIR$/MAIN.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Obj/Look.py" beforeDir="false" afterPath="$PROJECT_DIR$/Obj/Look.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Obj/Places and stuff.json" beforeDir="false" afterPath="$PROJECT_DIR$/Obj/Places and stuff.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Path/Map.json" beforeDir="false" afterPath="$PROJECT_DIR$/Path/Map.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -62,21 +62,21 @@ def examine_item_in_inventory(examineItem): #x item cmd
     else:
         print(Bag[itemName]["examine"])
 
-def wear_item(item, place):
+def wear_item(item, cur_place):
     blockPrint() # avoid printing error msg for looking in inv and places
     itemName = find_item_name_inventory(item)
-    cur_place = place
 
     if itemName == False:
-        itemPlaceName, placeName = Look.find_item_name(item, place)  # check if item exists in that place
+        itemName, cur_place = Look.find_item_name(item, cur_place)  # check if item exists in that place
         enablePrint() # allow print
-        if itemPlaceName == False:  # can't find item
+        if itemName == False:  # can't find item
             print("I cannot find that item in your inventory or here")
             return cur_place
         else:
             # item in places
-            Look.pick_up_item(itemPlaceName, placeName) # will check if store and if in place database again
-    cur_place = use_item(itemPlaceName, placeName)  # update cur place based on special effects of item
+            Look.pick_up_item(itemName, cur_place) # will check if store and if in place database again
+    enablePrint()  # allow print again in case it didn't go thru loop
+    cur_place = use_item(itemName, cur_place)  # update cur place based on special effects of item
     return cur_place
 
 
