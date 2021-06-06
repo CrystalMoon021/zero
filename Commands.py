@@ -20,9 +20,7 @@ def basic_commands(command, cur_place, money):
         Inventory.print_inventory()
 
     elif cmd == "x" or cmd == "examine" or cmd == "inspect":
-        stateInPlace = Look.examine_item_in_place(command[1:], cur_place)
-        if stateInPlace != True:
-            Inventory.examine_item_in_inventory(command[1:])
+        Look.examine_items(command[1:], cur_place)
 
     elif cmd == "l" or cmd == "look" or cmd == "describe":
         Look.read_place_description(cur_place)

@@ -52,15 +52,9 @@ def find_item_name_inventory(item): # find if an item exists in inv from input
     print("You see no such item in your inventory")
     return False
 
-def examine_item_in_inventory(examineItem): #x item cmd
+def examine_item_in_inventory(itemName): #part x item cmd and Look examine function
     Bag = read_inventory()
-    itemName = find_item_name_inventory(examineItem)
-
-    if itemName == False:
-        print("You don't see that item nearby either. ")
-        return
-    else:
-        print(Bag[itemName]["examine"])
+    print(Bag[itemName]["examine"])
 
 def wear_item(item, cur_place):
     blockPrint() # avoid printing error msg for looking in inv and places

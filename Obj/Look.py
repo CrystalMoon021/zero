@@ -131,21 +131,24 @@ def pick_up_item(item, place): # pick up item cmd
             print("You successfully picked up: " + itemName)
 
 
+def examine_items(item, cur_place):
+    Inventory.blockPrint()  # avoid printing error msg for looking in inv and places
+    itemName, cur_place = find_item_name(item, cur_place)  # check if item exists in that place
 
-def examine_item_in_place(item, place): #input name of item in string
-    s = ""
-    Place = read_places_and_stuff()  # repeat code instead of using function just this once to avoid error msg when x item that is not in place but in inv
-    itemName = s.join(item).lower()
-    placeName = place.lower()
-    items = Place[placeName]["items"]
-
-    for key in items.keys():  # look thru the items
-        if itemName.find(key) != -1:  # found a match
-            itemName = key
-            print(Place[placeName]["items"][itemName]["examine"])
-            return True
-
-    return False
+    if itemName == False:
+        itemName = Inventory.find_item_name_inventory(item) # check in inventory
+        Inventory.enablePrint()  # allow print
+        if itemName == False:  # can't find item
+            print("I cannot find that item in your inventory or here")
+            return
+        else:
+            # item in inventory
+            Inventory.examine_item_in_inventory(itemName)
+            return
+    # itemName exists in the places
+    Inventory.enablePrint()  # allow print again in case it didn't go thru loop
+    Place = read_places_and_stuff()
+    print(Place[cur_place]["items"][itemName]["examine"])
 
 
 
