@@ -126,7 +126,7 @@
                 "take": false
             },
             "pen": {
-                "description": "A pen sit quietly on a table.",
+                "description": "A pen sit quietly on a table. ",
                 "examine": "Seems like a regular pen, it is running out of ink",
                 "name": "pen",
                 "take": true,
