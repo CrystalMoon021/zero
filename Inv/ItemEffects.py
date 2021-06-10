@@ -6,9 +6,12 @@ from Hid import Hidden
 from Inv import Inventory
 import Commands
 
+wiresUnlock = ["office"]
+uniformUnlock = ["church", "house", "store", "town"]
+
 def special_check(item, cur_place): # return new location to update cur_place
     if item == "wires":
-        Pathing.unlock_places(cur_place, ["office"]) #unlock new locations
+        Pathing.unlock_places(cur_place, wiresUnlock) #unlock new locations
         return cur_place
     elif item == "uniform":
         print("The foundation's lead guard walks in on you straightening your tie. ")
@@ -21,7 +24,7 @@ def special_check(item, cur_place): # return new location to update cur_place
             Hidden.hidden_obj_unlocked("pen")
 
         print("He ushers you out of the office and opens the front door, 'Go out and do what you're paid for!' he exclaims shoving you out of the building. ")
-        Pathing.unlock_places(cur_place, ["church", "house", "store", "town"])
+        Pathing.unlock_places(cur_place, uniformUnlock)
 
         return "town" # change location to town
     elif item == "pen":
