@@ -4,12 +4,8 @@
     },
     "cell": {
         "bathroom": true,
-        "church": true,
-        "house": true,
         "locked": "You try the door of your cell, it's locked. It seems like you're stuck in here till you can pick the lock.",
-        "office": true,
-        "store": true,
-        "town": true
+        "office": true
     },
     "church": {
         "town": true

@@ -1,6 +1,7 @@
 import json
 from Inv import ItemEffects
 from Obj import Look
+import Commands
 
 import sys, os
 
@@ -56,7 +57,7 @@ def examine_item_in_inventory(itemName): #part x item cmd and Look examine funct
     Bag = read_inventory()
     print(Bag[itemName]["examine"])
 
-def wear_item(item, cur_place):
+def wear_item(item, cur_place, cur_clothes):
     blockPrint() # avoid printing error msg for looking in inv and places
     itemName = find_item_name_inventory(item)
 
@@ -72,18 +73,23 @@ def wear_item(item, cur_place):
     enablePrint()  # allow print again in case it didn't go thru loop
 
     Bag = read_inventory()
+    if itemName in cur_clothes:
+        print("You are already wearing this item. ")
+        return cur_place, cur_clothes
+
     try:  # check if can be used
         wearable = Bag[itemName]["wear"]
     except:
         print("This item cannot be worn")
-        return cur_place
+        return cur_place, cur_clothes
     try: # see if there is special dialogue
         print(Bag[itemName]["wearText"][cur_place])
     except:
         print("You wear the " + itemName)
     write_inventory(Bag)
-    ItemEffects.special_check(itemName, cur_place)  # update cur place based on special effects of item
-    return
+    cur_place = ItemEffects.special_check(itemName, cur_place)  # update cur place based on special effects of item
+    cur_clothes = [itemName]
+    return cur_place, cur_clothes
 
 
 def use_item(item, cur_place): # use or break item cmd (for now only break)
@@ -105,8 +111,8 @@ def use_item(item, cur_place): # use or break item cmd (for now only break)
         else: # successfully used
             print(Bag[itemName]["usedText"][cur_place])
             write_inventory(Bag)
-            ItemEffects.special_check(itemName, cur_place)  # check for certain things like unlocking locations
-            return
+            cur_place = ItemEffects.special_check(itemName, cur_place)  # check for certain things like unlocking locations
+            return cur_place
 
 def eat_item(item): # eat item cmd
     if item != []:
