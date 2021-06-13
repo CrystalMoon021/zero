@@ -9,7 +9,7 @@ from Path import Pathing
 
 cur_place = "cell"
 money = 20
-status = "locked"
+cur_clothes = ["shirt", "pants"]
 
 Inventory.reset_inventory()
 Look.place_data_reset()
@@ -27,7 +27,7 @@ cur_place, money = Commands.basic_commands("wear uniform", cur_place, money)
 
 while True:
     command = input("> ")
-    cur_place, money = Commands.basic_commands(command, cur_place, money)
+    cur_place, money, cur_clothes = Commands.basic_commands(command, cur_place, money, cur_clothes)
 
 
 

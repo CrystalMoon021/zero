@@ -4,6 +4,7 @@ from Speech import Interactions
 from Hid import Hidden
 from Obj import Store
 from Path import Pathing
+import Commands
 
 
 
@@ -129,6 +130,12 @@ def pick_up_item(item, place): # pick up item cmd
             del allPlaces[placeName]["items"][itemName]  # remove form places database
             write_places_and_stuff(allPlaces)
             print("You successfully picked up: " + itemName)
+            bag = Inventory.read_inventory()
+            if bag[itemName]["wear"] == True:
+                cur_place = Inventory.wear_item(itemName, placeName)
+                Commands.cur_place = cur_place
+
+
 
 
 def examine_items(item, cur_place):

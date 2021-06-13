@@ -12,7 +12,7 @@ uniformUnlock = ["church", "house", "store", "town"]
 def special_check(item, cur_place): # return new location to update cur_place
     if item == "wires":
         Pathing.unlock_places(cur_place, wiresUnlock) #unlock new locations
-        return cur_place
+        return
     elif item == "uniform":
         print("The foundation's lead guard walks in on you straightening your tie. ")
         print("'What is a guard like you doing here?' he squints in suspicion, 'Are you trying to slack off?' ")
@@ -25,10 +25,8 @@ def special_check(item, cur_place): # return new location to update cur_place
 
         print("He ushers you out of the office and opens the front door, 'Go out and do what you're paid for!' he exclaims shoving you out of the building. ")
         Pathing.unlock_places(cur_place, uniformUnlock)
-
-        return "town" # change location to town
+        Commands.cur_place = "town" # change location to town
+        return
     elif item == "pen":
         Diary.write_in_diary("diary", cur_place)
-        return cur_place
-    else:
-        return cur_place
+        return
