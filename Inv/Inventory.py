@@ -98,18 +98,20 @@ def use_item(item, cur_place): # use or break item cmd (for now only break)
 
     if itemName == False:  # can't find item
         print("Pick up items first, to use items they must be in your inventory. ")
-        return
+        return cur_place
     else:
         try: # check if can be used anywhere
             Bag[itemName]["usePlaces"]
         except:
             print("This item cannot be used")
-            return
+            return cur_place
         if cur_place not in Bag[itemName]["usePlaces"]:
             print(f"You see nowhere to use the {itemName} in the {cur_place}")
-            return
+            return cur_place
         else: # successfully used
             print(Bag[itemName]["usedText"][cur_place])
+            index = Bag[itemName]["usePlaces"].index(cur_place)
+            del Bag[itemName]["usePlaces"][index] # remove from valid places since already used
             write_inventory(Bag)
             cur_place = ItemEffects.special_check(itemName, cur_place)  # check for certain things like unlocking locations
             return cur_place

@@ -40,9 +40,7 @@
         "examine": "It's two metal wires, maybe useful in the future",
         "name": "wires",
         "take": true,
-        "usePlaces": [
-            "cell"
-        ],
+        "usePlaces": [],
         "usedText": {
             "cell": "You use the wires to pick the lock. Congrats! You're now free to go outside your cell. Take a look outside. "
         }
