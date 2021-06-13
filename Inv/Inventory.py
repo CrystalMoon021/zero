@@ -65,7 +65,7 @@ def wear_item(item, cur_place):
         enablePrint() # allow print
         if itemName == False:  # can't find item
             print("I cannot find that item in your inventory or here")
-            return cur_place
+            return
         else:
             # item in places
             Look.pick_up_item(itemName, cur_place) # make sure to pick up item if in places since we work in inventory from now
@@ -82,8 +82,8 @@ def wear_item(item, cur_place):
     except:
         print("You wear the " + itemName)
     write_inventory(Bag)
-    cur_place = ItemEffects.special_check(itemName, cur_place)  # update cur place based on special effects of item
-    return cur_place
+    ItemEffects.special_check(itemName, cur_place)  # update cur place based on special effects of item
+    return
 
 
 def use_item(item, cur_place): # use or break item cmd (for now only break)
@@ -92,21 +92,21 @@ def use_item(item, cur_place): # use or break item cmd (for now only break)
 
     if itemName == False:  # can't find item
         print("Pick up items first, to use items they must be in your inventory. ")
-        return cur_place
+        return
     else:
         try: # check if can be used anywhere
             Bag[itemName]["usePlaces"]
         except:
             print("This item cannot be used")
-            return cur_place
+            return
         if cur_place not in Bag[itemName]["usePlaces"]:
             print(f"You see nowhere to use the {itemName} in the {cur_place}")
-            return cur_place
+            return
         else: # successfully used
             print(Bag[itemName]["usedText"][cur_place])
             write_inventory(Bag)
-            cur_place = ItemEffects.special_check(itemName, cur_place)  # check for certain things like unlocking locations
-            return cur_place
+            ItemEffects.special_check(itemName, cur_place)  # check for certain things like unlocking locations
+            return
 
 def eat_item(item): # eat item cmd
     if item != []:

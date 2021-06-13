@@ -3,7 +3,7 @@ from Speech import Interactions
 from Obj import Look, Store, Diary
 
 
-def basic_commands(command, cur_place, money):
+def basic_commands(command, cur_place, money, cur_clothes):
     #print("\nWhat would you like to do now?")
 
     command = command.lower().split()
@@ -42,10 +42,10 @@ def basic_commands(command, cur_place, money):
         Look.break_item(command[1:], cur_place)
 
     elif cmd == "use":
-        cur_place = Inventory.use_item(command[1:], cur_place)
+        Inventory.use_item(command[1:], cur_place)
 
     elif cmd == "wear" or (command[0] == "put" and command[1] == "on"):
-        cur_place = Inventory.wear_item(command[1:], cur_place)
+        Inventory.wear_item(command[1:], cur_place)
 
     elif cmd == "help":
         f = open("help.txt", "r")
@@ -65,7 +65,7 @@ def basic_commands(command, cur_place, money):
     else:
         print("Sorry no such option is available")
 
-    return cur_place, money
+    return cur_place, money, cur_clothes
 
 
 
