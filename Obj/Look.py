@@ -112,29 +112,32 @@ def break_item(item, place): # use or break item cmd (for now only break)
         write_places_and_stuff(Place)
         Hidden.hidden_obj_unlocked(itemName)  # find the hidden item
 
-def pick_up_item(item, place): # pick up item cmd
-    itemName, placeName = find_item_name(item, place) # check if item exists in that place
+def pick_up_item(item, cur_place, cur_clothes): # pick up item cmd
+    itemName, placeName = find_item_name(item, cur_place) # check if item exists in that place
     allPlaces = read_places_and_stuff()
 
     if itemName == False:  # can't find item
-        return
-    elif place == "store":
+        return cur_place, cur_clothes
+    elif cur_place == "store":
         print("'Stop that you thief' exclaimed the shopkeeper. You return the item. ")
-        return
+        return cur_place, cur_clothes
     else:
         if allPlaces[placeName]["items"][itemName]["take"] == False:
             print("You cannot pick up this item")
-            return
+            return cur_place, cur_clothes
         else:
             Inventory.add_item_to_inventory(allPlaces[placeName]["items"][itemName])  # add to inventory
             del allPlaces[placeName]["items"][itemName]  # remove form places database
             write_places_and_stuff(allPlaces)
             print("You successfully picked up: " + itemName)
             bag = Inventory.read_inventory()
-            if bag[itemName]["wear"] == True:
-                cur_place = Inventory.wear_item(itemName, placeName)
-                Commands.cur_place = cur_place
-
+            try:
+                if bag[itemName]["wear"] == True:
+                    cur_place, cur_clothes = Inventory.wear_item(itemName, placeName, cur_clothes)
+                    Commands.cur_place = cur_place
+                    return cur_place, cur_clothes
+            except:
+                return cur_place, cur_clothes
 
 
 

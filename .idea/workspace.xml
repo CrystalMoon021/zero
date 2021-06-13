@@ -235,14 +235,19 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Commands.py</url>
-          <line>29</line>
-          <option name="timeStamp" value="6" />
+          <url>file://$PROJECT_DIR$/Inv/Inventory.py</url>
+          <line>75</line>
+          <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Commands.py</url>
-          <line>44</line>
-          <option name="timeStamp" value="7" />
+          <line>17</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Commands.py</url>
+          <line>48</line>
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
