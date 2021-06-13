@@ -35,8 +35,8 @@ cur_place, money, cur_clothes = Commands.basic_commands("wear uniform", cur_plac
 while True:
     command = input("> ")
     cur_place, money, cur_clothes = Commands.basic_commands(command, cur_place, money, cur_clothes)
-    print(cur_clothes)
-    print(cur_place)
+    # print(cur_clothes)
+    # print(cur_place)
 
 
 
