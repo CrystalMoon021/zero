@@ -200,9 +200,9 @@
     </configuration>
     <list>
       <item itemvalue="Python.Command.py" />
-      <item itemvalue="Python.Main" />
       <item itemvalue="Python.Inventory" />
       <item itemvalue="Python.Lodge" />
+      <item itemvalue="Python.Main" />
       <item itemvalue="Python.Main.py" />
       <item itemvalue="Python.testing" />
     </list>

@@ -23,6 +23,8 @@ cur_place, money = Commands.basic_commands("pick up uniform", cur_place, money)
 cur_place, money = Commands.basic_commands("go to cell", cur_place, money)
 cur_place, money = Commands.basic_commands("wear uniform", cur_place, money)
 
+# change town to city? - janice
+
 while True:
     command = input("> ")
     cur_place, money = Commands.basic_commands(command, cur_place, money)
