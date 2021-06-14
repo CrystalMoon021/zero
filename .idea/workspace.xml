@@ -3,12 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="86c07ba5-946f-4410-8c21-0143bc085d88" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Commands.py" beforeDir="false" afterPath="$PROJECT_DIR$/Commands.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Inv/Inventory.py" beforeDir="false" afterPath="$PROJECT_DIR$/Inv/Inventory.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Inv/ItemEffects.py" beforeDir="false" afterPath="$PROJECT_DIR$/Inv/ItemEffects.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MAIN.py" beforeDir="false" afterPath="$PROJECT_DIR$/MAIN.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Obj/Look.py" beforeDir="false" afterPath="$PROJECT_DIR$/Obj/Look.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Path/Map.json" beforeDir="false" afterPath="$PROJECT_DIR$/Path/Map.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +30,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Zero pathing" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../!Python Class - Canfly/Class Prep/Week 16 Prep" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
@@ -236,7 +231,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Inv/Inventory.py</url>
-          <line>75</line>
+          <line>76</line>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">

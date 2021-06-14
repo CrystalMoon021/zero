@@ -18,7 +18,7 @@ def basic_commands(command, cur_place, money, cur_clothes):
         cur_place, cur_clothes = Look.pick_up_item(command[1:], cur_place, cur_clothes)
 
     elif cmd == "i" or cmd == "inventory" or cmd == "inv":
-        Inventory.print_inventory()
+        Inventory.print_inventory(cur_clothes)
 
     elif cmd == "x" or cmd == "examine" or cmd == "inspect":
         Look.examine_items(command[1:], cur_place)

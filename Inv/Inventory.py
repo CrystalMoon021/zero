@@ -32,11 +32,14 @@ def write_inventory(Bag): # write to inv
     with open("Inv/Bag.json", "w") as file:  # Prep json for writing
         json.dump(Bag, file, indent=4, sort_keys=True)  # Rewrite the inventory back with new items
 
-def print_inventory(): #prints the items in inv (inv cmd)
+def print_inventory(cur_clothes): #prints the items in inv (inv cmd)
     Bag = read_inventory()
     print("Currently in your bag you hold: ")
     for key in Bag.keys():
         print("    " + key)
+    print("Currently you are wearing: ")
+    for clothing in cur_clothes:
+        print("    " + clothing)
 
 def add_item_to_inventory(itemDict): # input dictionary from Look (not directly from input) for pick up cmd
     Bag = read_inventory()
