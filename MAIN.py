@@ -13,16 +13,15 @@ money = 20
 cur_clothes = ["shirt", "pants"]
 
 Inventory.reset_inventory()
-Clothing.reset_clothing()
 Look.place_data_reset()
 Pathing.path_data_reset()
 
 
 # Testing
-# cur_place, money, cur_clothes = Commands.basic_commands("break cross", cur_place, money, cur_clothes)
-# cur_place, money, cur_clothes = Commands.basic_commands("use wires", cur_place, money, cur_clothes)
-# cur_place, money, cur_clothes = Commands.basic_commands("go to office", cur_place, money, cur_clothes)
-# cur_place, money, cur_clothes = Commands.basic_commands("wear uniform", cur_place, money, cur_clothes)
+cur_place, money, cur_clothes = Commands.basic_commands("break cross", cur_place, money, cur_clothes)
+cur_place, money, cur_clothes = Commands.basic_commands("use wires", cur_place, money, cur_clothes)
+cur_place, money, cur_clothes = Commands.basic_commands("go to office", cur_place, money, cur_clothes)
+cur_place, money, cur_clothes = Commands.basic_commands("wear uniform", cur_place, money, cur_clothes)
 
 
 

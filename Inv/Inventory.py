@@ -1,7 +1,6 @@
 import json
 from Inv import ItemEffects
 from Obj import Look
-from Inv import Clothing
 
 import sys, os
 
@@ -37,7 +36,18 @@ def print_inventory(cur_clothes): #prints the items in inv (inv cmd)
     print("Currently in your bag you hold: ")
     for key in Bag.keys():
         print("    " + key)
-    Clothing.print_clothing(cur_clothes)
+
+    print("At the bottom of your bag you put: ")
+    for key in Bag.keys():
+        try:
+            if Bag[key]["wearing"] == False:
+                print("    " + key)
+        except:
+            continue
+
+    print("Currently you are wearing: ")
+    for clothing in cur_clothes:
+        print("    " + clothing)
 
 def add_item_to_inventory(itemDict): # input dictionary from Look (not directly from input) for pick up cmd
     Bag = read_inventory()
@@ -70,28 +80,38 @@ def wear_item(item, cur_place, cur_clothes):
             return
         else:
             # item in places
-            Look.pick_up_item(itemName, cur_place) # make sure to pick up item if in places since we work in inventory from now
+            cur_place, cur_clothes = Look.pick_up_item(itemName, cur_place, cur_clothes) # make sure to pick up item if in places since we work in inventory from now
+
     enablePrint()  # allow print again in case it didn't go thru loop
 
     Bag = read_inventory()
-    if itemName in cur_clothes:
-        print("You are already wearing this item. ")
-        return cur_place, cur_clothes
 
     try:  # check if can be used
         wearable = Bag[itemName]["wear"]
     except:
         print("This item cannot be worn")
         return cur_place, cur_clothes
-    try: # see if there is special dialogue
-        print(Bag[itemName]["wearText"][cur_place])
-    except:
-        print("You wear the " + itemName)
-    write_inventory(Bag)
-    cur_place = ItemEffects.special_check(itemName, cur_place)  # update cur place based on special effects of item
-    cur_clothes = [itemName]
+    if Bag[itemName]["wearing"] == True: # check if already wearing
+        print("You are already wearing this item. " )
+        return cur_place, cur_clothes
+    else:
+        try: # see if there is special dialogue
+            print(Bag[itemName]["wearText"][cur_place])
+        except:
+            print("You wear the " + itemName)
 
-    return cur_place, cur_clothes
+        for key in Bag.keys():
+            try: # since some items don't have the key wear
+                if Bag[key]["wear"] == True:
+                    Bag[key]["wearing"] = False # set all other clothing to false
+            except:
+                pass
+
+        Bag[itemName]["wearing"] = True # set the clothing you just wore to true
+        write_inventory(Bag)
+        cur_place = ItemEffects.special_check(itemName, cur_place)  # update cur place based on special effects of item
+        cur_clothes = [itemName]
+        return cur_place, cur_clothes
 
 
 def use_item(item, cur_place): # use or break item cmd (for now only break)

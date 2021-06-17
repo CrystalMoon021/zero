@@ -138,6 +138,7 @@
         "name": "uniform",
         "take": true,
         "wear": true,
+        "wearing": false,
         "wearText": {
           "office": "You put on the uniform. You look just like any other guard. "
         }
