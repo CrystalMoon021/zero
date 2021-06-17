@@ -2,8 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="86c07ba5-946f-4410-8c21-0143bc085d88" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Inv/Clothing.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Inv/Wearing reset.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Inv/Wearing.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Inv/Bag.json" beforeDir="false" afterPath="$PROJECT_DIR$/Inv/Bag.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Inv/Inventory.py" beforeDir="false" afterPath="$PROJECT_DIR$/Inv/Inventory.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MAIN.py" beforeDir="false" afterPath="$PROJECT_DIR$/MAIN.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Obj/Look.py" beforeDir="false" afterPath="$PROJECT_DIR$/Obj/Look.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Obj/Places and stuff.json" beforeDir="false" afterPath="$PROJECT_DIR$/Obj/Places and stuff.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Path/Map.json" beforeDir="false" afterPath="$PROJECT_DIR$/Path/Map.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +27,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectId" id="1t5K6q7T63BrrYOGfAhXNE7mLE7" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -243,6 +259,11 @@
           <url>file://$PROJECT_DIR$/Commands.py</url>
           <line>48</line>
           <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Obj/Look.py</url>
+          <line>148</line>
+          <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
