@@ -77,7 +77,7 @@ def wear_item(item, cur_place, cur_clothes):
         enablePrint() # allow print
         if itemName == False:  # can't find item
             print("I cannot find that item in your inventory or here")
-            return
+            return cur_place, cur_clothes
         else:
             # item in places
             cur_place, cur_clothes = Look.pick_up_item(itemName, cur_place, cur_clothes) # make sure to pick up item if in places since we work in inventory from now
