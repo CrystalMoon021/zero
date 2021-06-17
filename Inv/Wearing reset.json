@@ -1,0 +1,16 @@
+{
+  "shirt": {
+    "examine": "Plain dark blue shirt, a little too big for you ",
+    "name": "shirt",
+    "wear": true,
+    "wearText": {
+    }
+  },
+  "pants": {
+    "examine": "Plain black pants that reach your ankles. ",
+    "name": "pants",
+    "wear": true,
+    "wearText": {
+    }
+  }
+}

@@ -1,7 +1,7 @@
 import json
 from Inv import ItemEffects
 from Obj import Look
-import Commands
+from Inv import Clothing
 
 import sys, os
 
@@ -37,9 +37,7 @@ def print_inventory(cur_clothes): #prints the items in inv (inv cmd)
     print("Currently in your bag you hold: ")
     for key in Bag.keys():
         print("    " + key)
-    print("Currently you are wearing: ")
-    for clothing in cur_clothes:
-        print("    " + clothing)
+    Clothing.print_clothing(cur_clothes)
 
 def add_item_to_inventory(itemDict): # input dictionary from Look (not directly from input) for pick up cmd
     Bag = read_inventory()
@@ -92,6 +90,7 @@ def wear_item(item, cur_place, cur_clothes):
     write_inventory(Bag)
     cur_place = ItemEffects.special_check(itemName, cur_place)  # update cur place based on special effects of item
     cur_clothes = [itemName]
+
     return cur_place, cur_clothes
 
 

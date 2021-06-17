@@ -1,5 +1,5 @@
 import json
-from Inv import Inventory
+from Inv import Inventory, Clothing
 from Speech import Interactions
 from Hid import Hidden
 from Obj import Store
@@ -146,14 +146,21 @@ def examine_items(item, cur_place):
     itemName, cur_place = find_item_name(item, cur_place)  # check if item exists in that place
 
     if itemName == False:
-        itemName = Inventory.find_item_name_inventory(item) # check in inventory
-        Inventory.enablePrint()  # allow print
-        if itemName == False:  # can't find item
-            print("I cannot find that item in your inventory or here")
-            return
+        itemName = Clothing.find_item_name_clothing(item) # check in clothing
+        if itemName == False:
+            itemName = Inventory.find_item_name_inventory(item) # check in inventory
+            Inventory.enablePrint()  # allow print
+            if itemName == False:  # can't find item
+                print("I cannot find that item in your inventory or here")
+                return
+            else:
+                # item in inventory
+                Inventory.examine_item_in_inventory(itemName)
+                return
         else:
-            # item in inventory
-            Inventory.examine_item_in_inventory(itemName)
+            # item in clothing
+            Inventory.enablePrint()  # allow print
+            Clothing.examine_item_in_clothing(itemName)
             return
     # itemName exists in the places
     Inventory.enablePrint()  # allow print again in case it didn't go thru loop
