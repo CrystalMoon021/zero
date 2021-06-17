@@ -25,6 +25,7 @@ def unlock_places(cur_place, places):
     for place in places:
         Map[cur_place][place] = True
     write_map(Map)
+    return
 
 def travel(destination, cur_place, money): # destination and place are already checked to be valid in look
     Map = read_map()
